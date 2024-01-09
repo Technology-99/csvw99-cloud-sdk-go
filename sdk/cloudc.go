@@ -45,6 +45,30 @@ func (c *Sdk) CloudCCheckStatus() *Sdk {
 	return c
 }
 
+func (c *Sdk) CloudCDouyinConfigSet(in *cloudc.DouyinConfigSetParams) (*cloudc.ConfigResp, error) {
+	res, err := c.CloudC.DouyinConfigSet(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) CloudCDouyinConfigGet(in *cloudc.ConfigGetParams) (*cloudc.DouyinConfigGetResp, error) {
+	res, err := c.CloudC.DouyinConfigGet(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) CloudCDouyinConfigGetAll() (*cloudc.DouyinConfigGetAllResp, error) {
+	res, err := c.CloudC.DouyinConfigGetAll(c.SonyCtx(), &cloudc.ConfigGetAllParams{})
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 func (c *Sdk) CloudCWechatConfigSet(in *cloudc.WechatConfigSetParams) (*cloudc.ConfigResp, error) {
 	res, err := c.CloudC.WechatConfigSet(c.SonyCtx(), in)
 	if err != nil {

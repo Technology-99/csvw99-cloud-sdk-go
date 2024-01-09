@@ -1,7 +1,9 @@
 package main
 
 import (
+	"github.com/Technology-99/csvw99-cloud-sdk-go/pb/cloudc"
 	"github.com/Technology-99/csvw99-cloud-sdk-go/sdk"
+	"github.com/zeromicro/go-zero/core/logx"
 	"os"
 )
 
@@ -58,4 +60,16 @@ func main() {
 	//	return
 	//}
 	//logx.Infof("打印一下请求的结果:%+v", res4)
+
+	res, err := s.CloudCCheckStatus().CloudCDouyinConfigSet(&cloudc.DouyinConfigSetParams{
+		Key:          "dbl_game",
+		ClientKey:    "ttbf67c9da2057b4f802",
+		ClientSecret: "90a19aae08cafce2d1c9752d56cc3bbd13b1053c",
+		AppName:      "dbl_game",
+	})
+
+	if err != nil {
+		panic(err)
+	}
+	logx.Infof("打印一下请求的结果:%+v", res)
 }
