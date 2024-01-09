@@ -37,6 +37,7 @@ type Sdk struct {
 	Label               *Label
 	Sls                 *Sls
 	Minisite            *Minisite
+	Douyin              *Douyin
 }
 
 func NewSdk() *Sdk {
