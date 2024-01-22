@@ -17,6 +17,7 @@ import (
 
 type Sls struct {
 	Producer    *producer.Producer
+	Client      sls.ClientInterface
 	Num         int64
 	Status      int
 	Retry       int
@@ -65,6 +66,9 @@ func (c *Sdk) InitSls() *Sdk {
 	signal.Notify(ch, os.Kill, os.Interrupt)
 	producerInstance.Start() // 启动producer实例
 	c.Sls.Producer = producerInstance
+
+	// note: 初始化client
+	c.Sls.Client = sls.CreateNormalInterfaceV2(c.Sls.UsingConfig.Endpoint, credentialsProvider)
 	c.Sls.Status = types.STATUS_READY
 	c.Sls.Retry += 1
 	return c
