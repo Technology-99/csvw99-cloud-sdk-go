@@ -16,7 +16,7 @@ func main() {
 
 	s := sdk.NewSdk().WithConfig(sdk.DefaultConfig(AccessKeyId, AccessKeySecret, []string{Endpoint})).AutoAuth().InitCloudC().InitSms()
 
-	result, err := s.SmsCheckStatus().SmsSendSms("17344880413", "123456")
+	result, err := s.SmsCheckStatus().SmsSendSms("13331909118", "123456")
 	if err != nil {
 		panic(err)
 	}
