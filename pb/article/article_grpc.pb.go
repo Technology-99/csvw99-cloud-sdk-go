@@ -19,26 +19,34 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ArticleRpcService_Create_FullMethodName              = "/article.ArticleRpcService/Create"
-	ArticleRpcService_Update_FullMethodName              = "/article.ArticleRpcService/Update"
-	ArticleRpcService_Delete_FullMethodName              = "/article.ArticleRpcService/Delete"
-	ArticleRpcService_DeleteIds_FullMethodName           = "/article.ArticleRpcService/DeleteIds"
-	ArticleRpcService_Query_FullMethodName               = "/article.ArticleRpcService/Query"
-	ArticleRpcService_QueryList_FullMethodName           = "/article.ArticleRpcService/QueryList"
-	ArticleRpcService_UpdateStatus_FullMethodName        = "/article.ArticleRpcService/UpdateStatus"
-	ArticleRpcService_BindArticleLabels_FullMethodName   = "/article.ArticleRpcService/BindArticleLabels"
-	ArticleRpcService_UnBindArticleLabels_FullMethodName = "/article.ArticleRpcService/UnBindArticleLabels"
-	ArticleRpcService_AttachmentCreate_FullMethodName    = "/article.ArticleRpcService/AttachmentCreate"
-	ArticleRpcService_AttachmentUpdate_FullMethodName    = "/article.ArticleRpcService/AttachmentUpdate"
-	ArticleRpcService_AttachmentDelete_FullMethodName    = "/article.ArticleRpcService/AttachmentDelete"
-	ArticleRpcService_AttachmentDeleteIds_FullMethodName = "/article.ArticleRpcService/AttachmentDeleteIds"
-	ArticleRpcService_AttachmentQuery_FullMethodName     = "/article.ArticleRpcService/AttachmentQuery"
-	ArticleRpcService_AttachmentQueryList_FullMethodName = "/article.ArticleRpcService/AttachmentQueryList"
-	ArticleRpcService_AttaFileCreate_FullMethodName      = "/article.ArticleRpcService/AttaFileCreate"
-	ArticleRpcService_AttaFileDelete_FullMethodName      = "/article.ArticleRpcService/AttaFileDelete"
-	ArticleRpcService_AttaFileDeleteIds_FullMethodName   = "/article.ArticleRpcService/AttaFileDeleteIds"
-	ArticleRpcService_AttaFileQuery_FullMethodName       = "/article.ArticleRpcService/AttaFileQuery"
-	ArticleRpcService_AttaFileQueryList_FullMethodName   = "/article.ArticleRpcService/AttaFileQueryList"
+	ArticleRpcService_Create_FullMethodName                = "/article.ArticleRpcService/Create"
+	ArticleRpcService_Update_FullMethodName                = "/article.ArticleRpcService/Update"
+	ArticleRpcService_Delete_FullMethodName                = "/article.ArticleRpcService/Delete"
+	ArticleRpcService_DeleteIds_FullMethodName             = "/article.ArticleRpcService/DeleteIds"
+	ArticleRpcService_Query_FullMethodName                 = "/article.ArticleRpcService/Query"
+	ArticleRpcService_QueryList_FullMethodName             = "/article.ArticleRpcService/QueryList"
+	ArticleRpcService_QueryRecommendList_FullMethodName    = "/article.ArticleRpcService/QueryRecommendList"
+	ArticleRpcService_UpdateStatus_FullMethodName          = "/article.ArticleRpcService/UpdateStatus"
+	ArticleRpcService_BindArticleLabels_FullMethodName     = "/article.ArticleRpcService/BindArticleLabels"
+	ArticleRpcService_UnBindArticleLabels_FullMethodName   = "/article.ArticleRpcService/UnBindArticleLabels"
+	ArticleRpcService_RelatedSitesCreate_FullMethodName    = "/article.ArticleRpcService/RelatedSitesCreate"
+	ArticleRpcService_RelatedSitesUpdate_FullMethodName    = "/article.ArticleRpcService/RelatedSitesUpdate"
+	ArticleRpcService_RelatedSitesDelete_FullMethodName    = "/article.ArticleRpcService/RelatedSitesDelete"
+	ArticleRpcService_RelatedSitesDeleteIds_FullMethodName = "/article.ArticleRpcService/RelatedSitesDeleteIds"
+	ArticleRpcService_RelatedSitesQuery_FullMethodName     = "/article.ArticleRpcService/RelatedSitesQuery"
+	ArticleRpcService_RelatedSitesQueryIds_FullMethodName  = "/article.ArticleRpcService/RelatedSitesQueryIds"
+	ArticleRpcService_RelatedSitesQueryList_FullMethodName = "/article.ArticleRpcService/RelatedSitesQueryList"
+	ArticleRpcService_AttachmentCreate_FullMethodName      = "/article.ArticleRpcService/AttachmentCreate"
+	ArticleRpcService_AttachmentUpdate_FullMethodName      = "/article.ArticleRpcService/AttachmentUpdate"
+	ArticleRpcService_AttachmentDelete_FullMethodName      = "/article.ArticleRpcService/AttachmentDelete"
+	ArticleRpcService_AttachmentDeleteIds_FullMethodName   = "/article.ArticleRpcService/AttachmentDeleteIds"
+	ArticleRpcService_AttachmentQuery_FullMethodName       = "/article.ArticleRpcService/AttachmentQuery"
+	ArticleRpcService_AttachmentQueryList_FullMethodName   = "/article.ArticleRpcService/AttachmentQueryList"
+	ArticleRpcService_AttaFileCreate_FullMethodName        = "/article.ArticleRpcService/AttaFileCreate"
+	ArticleRpcService_AttaFileDelete_FullMethodName        = "/article.ArticleRpcService/AttaFileDelete"
+	ArticleRpcService_AttaFileDeleteIds_FullMethodName     = "/article.ArticleRpcService/AttaFileDeleteIds"
+	ArticleRpcService_AttaFileQuery_FullMethodName         = "/article.ArticleRpcService/AttaFileQuery"
+	ArticleRpcService_AttaFileQueryList_FullMethodName     = "/article.ArticleRpcService/AttaFileQueryList"
 )
 
 // ArticleRpcServiceClient is the client API for ArticleRpcService service.
@@ -51,9 +59,19 @@ type ArticleRpcServiceClient interface {
 	DeleteIds(ctx context.Context, in *DeleteIdsReq, opts ...grpc.CallOption) (*Response, error)
 	Query(ctx context.Context, in *QueryReq, opts ...grpc.CallOption) (*QueryArticleResp, error)
 	QueryList(ctx context.Context, in *QueryArticleListReq, opts ...grpc.CallOption) (*QueryArticleListResp, error)
+	QueryRecommendList(ctx context.Context, in *QueryReq, opts ...grpc.CallOption) (*QueryRecommendListResp, error)
 	UpdateStatus(ctx context.Context, in *UpdateStatusReq, opts ...grpc.CallOption) (*Response, error)
 	BindArticleLabels(ctx context.Context, in *UpdateBindLabelsReq, opts ...grpc.CallOption) (*Response, error)
 	UnBindArticleLabels(ctx context.Context, in *UpdateBindLabelsReq, opts ...grpc.CallOption) (*Response, error)
+	// note: 相关站点
+	RelatedSitesCreate(ctx context.Context, in *CreateRelatedSitesReq, opts ...grpc.CallOption) (*CreateResponse, error)
+	RelatedSitesUpdate(ctx context.Context, in *UpdateRelatedSitesReq, opts ...grpc.CallOption) (*Response, error)
+	RelatedSitesDelete(ctx context.Context, in *DeleteReq, opts ...grpc.CallOption) (*Response, error)
+	RelatedSitesDeleteIds(ctx context.Context, in *DeleteIdsReq, opts ...grpc.CallOption) (*Response, error)
+	RelatedSitesQuery(ctx context.Context, in *QueryReq, opts ...grpc.CallOption) (*QueryRelatedSitesResp, error)
+	RelatedSitesQueryIds(ctx context.Context, in *QueryIdsReq, opts ...grpc.CallOption) (*QueryRelatedSitesListResp, error)
+	RelatedSitesQueryList(ctx context.Context, in *QueryRelatedSitesListReq, opts ...grpc.CallOption) (*QueryRelatedSitesListResp, error)
+	// note: 附件模块
 	AttachmentCreate(ctx context.Context, in *CreateAttachmentReq, opts ...grpc.CallOption) (*CreateResponse, error)
 	AttachmentUpdate(ctx context.Context, in *UpdateAttachmentReq, opts ...grpc.CallOption) (*Response, error)
 	AttachmentDelete(ctx context.Context, in *DeleteReq, opts ...grpc.CallOption) (*Response, error)
@@ -129,6 +147,15 @@ func (c *articleRpcServiceClient) QueryList(ctx context.Context, in *QueryArticl
 	return out, nil
 }
 
+func (c *articleRpcServiceClient) QueryRecommendList(ctx context.Context, in *QueryReq, opts ...grpc.CallOption) (*QueryRecommendListResp, error) {
+	out := new(QueryRecommendListResp)
+	err := c.cc.Invoke(ctx, ArticleRpcService_QueryRecommendList_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *articleRpcServiceClient) UpdateStatus(ctx context.Context, in *UpdateStatusReq, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ArticleRpcService_UpdateStatus_FullMethodName, in, out, opts...)
@@ -150,6 +177,69 @@ func (c *articleRpcServiceClient) BindArticleLabels(ctx context.Context, in *Upd
 func (c *articleRpcServiceClient) UnBindArticleLabels(ctx context.Context, in *UpdateBindLabelsReq, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ArticleRpcService_UnBindArticleLabels_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *articleRpcServiceClient) RelatedSitesCreate(ctx context.Context, in *CreateRelatedSitesReq, opts ...grpc.CallOption) (*CreateResponse, error) {
+	out := new(CreateResponse)
+	err := c.cc.Invoke(ctx, ArticleRpcService_RelatedSitesCreate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *articleRpcServiceClient) RelatedSitesUpdate(ctx context.Context, in *UpdateRelatedSitesReq, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, ArticleRpcService_RelatedSitesUpdate_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *articleRpcServiceClient) RelatedSitesDelete(ctx context.Context, in *DeleteReq, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, ArticleRpcService_RelatedSitesDelete_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *articleRpcServiceClient) RelatedSitesDeleteIds(ctx context.Context, in *DeleteIdsReq, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, ArticleRpcService_RelatedSitesDeleteIds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *articleRpcServiceClient) RelatedSitesQuery(ctx context.Context, in *QueryReq, opts ...grpc.CallOption) (*QueryRelatedSitesResp, error) {
+	out := new(QueryRelatedSitesResp)
+	err := c.cc.Invoke(ctx, ArticleRpcService_RelatedSitesQuery_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *articleRpcServiceClient) RelatedSitesQueryIds(ctx context.Context, in *QueryIdsReq, opts ...grpc.CallOption) (*QueryRelatedSitesListResp, error) {
+	out := new(QueryRelatedSitesListResp)
+	err := c.cc.Invoke(ctx, ArticleRpcService_RelatedSitesQueryIds_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *articleRpcServiceClient) RelatedSitesQueryList(ctx context.Context, in *QueryRelatedSitesListReq, opts ...grpc.CallOption) (*QueryRelatedSitesListResp, error) {
+	out := new(QueryRelatedSitesListResp)
+	err := c.cc.Invoke(ctx, ArticleRpcService_RelatedSitesQueryList_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -265,9 +355,19 @@ type ArticleRpcServiceServer interface {
 	DeleteIds(context.Context, *DeleteIdsReq) (*Response, error)
 	Query(context.Context, *QueryReq) (*QueryArticleResp, error)
 	QueryList(context.Context, *QueryArticleListReq) (*QueryArticleListResp, error)
+	QueryRecommendList(context.Context, *QueryReq) (*QueryRecommendListResp, error)
 	UpdateStatus(context.Context, *UpdateStatusReq) (*Response, error)
 	BindArticleLabels(context.Context, *UpdateBindLabelsReq) (*Response, error)
 	UnBindArticleLabels(context.Context, *UpdateBindLabelsReq) (*Response, error)
+	// note: 相关站点
+	RelatedSitesCreate(context.Context, *CreateRelatedSitesReq) (*CreateResponse, error)
+	RelatedSitesUpdate(context.Context, *UpdateRelatedSitesReq) (*Response, error)
+	RelatedSitesDelete(context.Context, *DeleteReq) (*Response, error)
+	RelatedSitesDeleteIds(context.Context, *DeleteIdsReq) (*Response, error)
+	RelatedSitesQuery(context.Context, *QueryReq) (*QueryRelatedSitesResp, error)
+	RelatedSitesQueryIds(context.Context, *QueryIdsReq) (*QueryRelatedSitesListResp, error)
+	RelatedSitesQueryList(context.Context, *QueryRelatedSitesListReq) (*QueryRelatedSitesListResp, error)
+	// note: 附件模块
 	AttachmentCreate(context.Context, *CreateAttachmentReq) (*CreateResponse, error)
 	AttachmentUpdate(context.Context, *UpdateAttachmentReq) (*Response, error)
 	AttachmentDelete(context.Context, *DeleteReq) (*Response, error)
@@ -304,6 +404,9 @@ func (UnimplementedArticleRpcServiceServer) Query(context.Context, *QueryReq) (*
 func (UnimplementedArticleRpcServiceServer) QueryList(context.Context, *QueryArticleListReq) (*QueryArticleListResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method QueryList not implemented")
 }
+func (UnimplementedArticleRpcServiceServer) QueryRecommendList(context.Context, *QueryReq) (*QueryRecommendListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method QueryRecommendList not implemented")
+}
 func (UnimplementedArticleRpcServiceServer) UpdateStatus(context.Context, *UpdateStatusReq) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateStatus not implemented")
 }
@@ -312,6 +415,27 @@ func (UnimplementedArticleRpcServiceServer) BindArticleLabels(context.Context, *
 }
 func (UnimplementedArticleRpcServiceServer) UnBindArticleLabels(context.Context, *UpdateBindLabelsReq) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnBindArticleLabels not implemented")
+}
+func (UnimplementedArticleRpcServiceServer) RelatedSitesCreate(context.Context, *CreateRelatedSitesReq) (*CreateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RelatedSitesCreate not implemented")
+}
+func (UnimplementedArticleRpcServiceServer) RelatedSitesUpdate(context.Context, *UpdateRelatedSitesReq) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RelatedSitesUpdate not implemented")
+}
+func (UnimplementedArticleRpcServiceServer) RelatedSitesDelete(context.Context, *DeleteReq) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RelatedSitesDelete not implemented")
+}
+func (UnimplementedArticleRpcServiceServer) RelatedSitesDeleteIds(context.Context, *DeleteIdsReq) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RelatedSitesDeleteIds not implemented")
+}
+func (UnimplementedArticleRpcServiceServer) RelatedSitesQuery(context.Context, *QueryReq) (*QueryRelatedSitesResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RelatedSitesQuery not implemented")
+}
+func (UnimplementedArticleRpcServiceServer) RelatedSitesQueryIds(context.Context, *QueryIdsReq) (*QueryRelatedSitesListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RelatedSitesQueryIds not implemented")
+}
+func (UnimplementedArticleRpcServiceServer) RelatedSitesQueryList(context.Context, *QueryRelatedSitesListReq) (*QueryRelatedSitesListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RelatedSitesQueryList not implemented")
 }
 func (UnimplementedArticleRpcServiceServer) AttachmentCreate(context.Context, *CreateAttachmentReq) (*CreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AttachmentCreate not implemented")
@@ -467,6 +591,24 @@ func _ArticleRpcService_QueryList_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ArticleRpcService_QueryRecommendList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).QueryRecommendList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_QueryRecommendList_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).QueryRecommendList(ctx, req.(*QueryReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ArticleRpcService_UpdateStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateStatusReq)
 	if err := dec(in); err != nil {
@@ -517,6 +659,132 @@ func _ArticleRpcService_UnBindArticleLabels_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ArticleRpcServiceServer).UnBindArticleLabels(ctx, req.(*UpdateBindLabelsReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ArticleRpcService_RelatedSitesCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateRelatedSitesReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).RelatedSitesCreate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_RelatedSitesCreate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).RelatedSitesCreate(ctx, req.(*CreateRelatedSitesReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ArticleRpcService_RelatedSitesUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRelatedSitesReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).RelatedSitesUpdate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_RelatedSitesUpdate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).RelatedSitesUpdate(ctx, req.(*UpdateRelatedSitesReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ArticleRpcService_RelatedSitesDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).RelatedSitesDelete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_RelatedSitesDelete_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).RelatedSitesDelete(ctx, req.(*DeleteReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ArticleRpcService_RelatedSitesDeleteIds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteIdsReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).RelatedSitesDeleteIds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_RelatedSitesDeleteIds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).RelatedSitesDeleteIds(ctx, req.(*DeleteIdsReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ArticleRpcService_RelatedSitesQuery_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).RelatedSitesQuery(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_RelatedSitesQuery_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).RelatedSitesQuery(ctx, req.(*QueryReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ArticleRpcService_RelatedSitesQueryIds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryIdsReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).RelatedSitesQueryIds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_RelatedSitesQueryIds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).RelatedSitesQueryIds(ctx, req.(*QueryIdsReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ArticleRpcService_RelatedSitesQueryList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryRelatedSitesListReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).RelatedSitesQueryList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_RelatedSitesQueryList_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).RelatedSitesQueryList(ctx, req.(*QueryRelatedSitesListReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -751,6 +1019,10 @@ var ArticleRpcService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ArticleRpcService_QueryList_Handler,
 		},
 		{
+			MethodName: "QueryRecommendList",
+			Handler:    _ArticleRpcService_QueryRecommendList_Handler,
+		},
+		{
 			MethodName: "UpdateStatus",
 			Handler:    _ArticleRpcService_UpdateStatus_Handler,
 		},
@@ -761,6 +1033,34 @@ var ArticleRpcService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UnBindArticleLabels",
 			Handler:    _ArticleRpcService_UnBindArticleLabels_Handler,
+		},
+		{
+			MethodName: "RelatedSitesCreate",
+			Handler:    _ArticleRpcService_RelatedSitesCreate_Handler,
+		},
+		{
+			MethodName: "RelatedSitesUpdate",
+			Handler:    _ArticleRpcService_RelatedSitesUpdate_Handler,
+		},
+		{
+			MethodName: "RelatedSitesDelete",
+			Handler:    _ArticleRpcService_RelatedSitesDelete_Handler,
+		},
+		{
+			MethodName: "RelatedSitesDeleteIds",
+			Handler:    _ArticleRpcService_RelatedSitesDeleteIds_Handler,
+		},
+		{
+			MethodName: "RelatedSitesQuery",
+			Handler:    _ArticleRpcService_RelatedSitesQuery_Handler,
+		},
+		{
+			MethodName: "RelatedSitesQueryIds",
+			Handler:    _ArticleRpcService_RelatedSitesQueryIds_Handler,
+		},
+		{
+			MethodName: "RelatedSitesQueryList",
+			Handler:    _ArticleRpcService_RelatedSitesQueryList_Handler,
 		},
 		{
 			MethodName: "AttachmentCreate",

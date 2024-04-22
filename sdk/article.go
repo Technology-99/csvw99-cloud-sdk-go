@@ -94,6 +94,14 @@ func (c *Sdk) ArticleQuery(in *article.QueryReq) (*article.QueryArticleResp, err
 	return res, nil
 }
 
+func (c *Sdk) ArticleQueryRecommendList(in *article.QueryReq) (*article.QueryRecommendListResp, error) {
+	res, err := c.Article.QueryRecommendList(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 func (c *Sdk) ArticleQueryList(in *article.QueryArticleListReq) (*article.QueryArticleListResp, error) {
 	res, err := c.Article.QueryList(c.SonyCtx(), in)
 	if err != nil {
@@ -197,6 +205,57 @@ func (c *Sdk) ArticleAttaFileQuery(in *article.QueryReq) (*article.QueryAttaFile
 }
 func (c *Sdk) ArticleAttaFileQueryList(in *article.QueryAttaFileListReq) (*article.QueryAttaFileListResp, error) {
 	res, err := c.Article.AttaFileQueryList(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+// note: 相关站点的增删改查
+func (c *Sdk) RelatedSitesCreate(in *article.CreateRelatedSitesReq) (*article.CreateResponse, error) {
+	res, err := c.Article.RelatedSitesCreate(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+func (c *Sdk) RelatedSitesUpdate(in *article.UpdateRelatedSitesReq) (*article.Response, error) {
+	res, err := c.Article.RelatedSitesUpdate(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+func (c *Sdk) RelatedSitesDelete(in *article.DeleteReq) (*article.Response, error) {
+	res, err := c.Article.RelatedSitesDelete(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+func (c *Sdk) RelatedSitesDeleteIds(in *article.DeleteIdsReq) (*article.Response, error) {
+	res, err := c.Article.RelatedSitesDeleteIds(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+func (c *Sdk) RelatedSitesQuery(in *article.QueryReq) (*article.QueryRelatedSitesResp, error) {
+	res, err := c.Article.RelatedSitesQuery(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+func (c *Sdk) RelatedSitesQueryList(in *article.QueryRelatedSitesListReq) (*article.QueryRelatedSitesListResp, error) {
+	res, err := c.Article.RelatedSitesQueryList(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+func (c *Sdk) RelatedSitesQueryIds(in *article.QueryIdsReq) (*article.QueryRelatedSitesListResp, error) {
+	res, err := c.Article.RelatedSitesQueryIds(c.SonyCtx(), in)
 	if err != nil {
 		return nil, err
 	}

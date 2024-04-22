@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 更新文章的参数">
-      <change beforePath="$PROJECT_DIR$/example/sms.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/sms.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/article/article.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/article/article.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/article/article_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/article/article_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/article.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
@@ -48,7 +52,8 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/joker/Documents/Github/tech/csvw99-cloud-sdk-go/pb&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;go.vgo&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -56,10 +61,26 @@
       <recent name="$PROJECT_DIR$/pb" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go/example" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="csvw99-cloud-sdk-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="github.com/Technology-99/csvw99-cloud-sdk-go/example" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/example/sms.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-gosdk-266795519c66-911b893a1778-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.13135.104" />
+        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.14475.38" />
       </set>
     </attachedChunks>
   </component>
@@ -74,6 +95,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="feat: 更新文章的参数" />
   </component>
   <component name="VgoProject">
+    <environment>
+      <map>
+        <entry key="ACCESS_KEY_ID" value="od8NORDMU4LqnQiR" />
+        <entry key="ACCESS_KEY_SECRET" value="132939C9B0D4476F25C018350171F4B0981Ce66C" />
+        <entry key="ENDPOINT" value="core.csvw88.com:8080" />
+        <entry key="GOPROXY" value="goproxy.cn" />
+      </map>
+    </environment>
     <settings-migrated>true</settings-migrated>
   </component>
 </project>
