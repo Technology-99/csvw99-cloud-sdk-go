@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 更新文章的参数">
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 文章相关添加推荐站点的字段">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/article/article.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/article/article.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/article/article_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/article/article_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/article.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,14 +89,16 @@
     <MESSAGE value="feat: 删除idea" />
     <MESSAGE value="feat: 添加sls的client" />
     <MESSAGE value="feat: 更新文章的参数" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 更新文章的参数" />
+    <MESSAGE value="feat: 文章相关添加推荐文章的接口，相关站点添加相关站点的增删改查" />
+    <MESSAGE value="feat: 文章相关添加推荐站点的字段" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 文章相关添加推荐站点的字段" />
   </component>
   <component name="VgoProject">
     <environment>
       <map>
-        <entry key="ACCESS_KEY_ID" value="od8NORDMU4LqnQiR" />
-        <entry key="ACCESS_KEY_SECRET" value="132939C9B0D4476F25C018350171F4B0981Ce66C" />
-        <entry key="ENDPOINT" value="core.csvw88.com:8080" />
+        <entry key="ACCESS_KEY_ID" value="QCLBR4eL0JQMcuwB" />
+        <entry key="ACCESS_KEY_SECRET" value="F1B105A70100F03264Ded0281D871D66D62F5001" />
+        <entry key="ENDPOINT" value="news-rpc-api.lego.cn:443" />
         <entry key="GOPROXY" value="goproxy.cn" />
       </map>
     </environment>
