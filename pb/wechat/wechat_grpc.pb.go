@@ -22,6 +22,7 @@ const (
 	WechatRpcService_Code2Token_FullMethodName                 = "/wechat.WechatRpcService/Code2Token"
 	WechatRpcService_RefreshUserToken_FullMethodName           = "/wechat.WechatRpcService/RefreshUserToken"
 	WechatRpcService_UserToken2UserInfo_FullMethodName         = "/wechat.WechatRpcService/UserToken2UserInfo"
+	WechatRpcService_MiniAppCode2Session_FullMethodName        = "/wechat.WechatRpcService/MiniAppCode2Session"
 	WechatRpcService_WebRedirectWechat_FullMethodName          = "/wechat.WechatRpcService/WebRedirectWechat"
 	WechatRpcService_WebAutoRedirectWechat_FullMethodName      = "/wechat.WechatRpcService/WebAutoRedirectWechat"
 	WechatRpcService_OfficialAccountAccessToken_FullMethodName = "/wechat.WechatRpcService/OfficialAccountAccessToken"
@@ -36,6 +37,8 @@ type WechatRpcServiceClient interface {
 	Code2Token(ctx context.Context, in *CodeReq, opts ...grpc.CallOption) (*CodeResp, error)
 	RefreshUserToken(ctx context.Context, in *RefreshReq, opts ...grpc.CallOption) (*RefreshResp, error)
 	UserToken2UserInfo(ctx context.Context, in *TokenReq, opts ...grpc.CallOption) (*UserInfoResp, error)
+	// note: miniCode2Session
+	MiniAppCode2Session(ctx context.Context, in *CodeReq, opts ...grpc.CallOption) (*MiniAppCodeResp, error)
 	// note: web
 	WebRedirectWechat(ctx context.Context, in *WebRedirectReq, opts ...grpc.CallOption) (*WebRedirectResp, error)
 	WebAutoRedirectWechat(ctx context.Context, in *WebAutoRedirectReq, opts ...grpc.CallOption) (*WebAutoRedirectResp, error)
@@ -73,6 +76,15 @@ func (c *wechatRpcServiceClient) RefreshUserToken(ctx context.Context, in *Refre
 func (c *wechatRpcServiceClient) UserToken2UserInfo(ctx context.Context, in *TokenReq, opts ...grpc.CallOption) (*UserInfoResp, error) {
 	out := new(UserInfoResp)
 	err := c.cc.Invoke(ctx, WechatRpcService_UserToken2UserInfo_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *wechatRpcServiceClient) MiniAppCode2Session(ctx context.Context, in *CodeReq, opts ...grpc.CallOption) (*MiniAppCodeResp, error) {
+	out := new(MiniAppCodeResp)
+	err := c.cc.Invoke(ctx, WechatRpcService_MiniAppCode2Session_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -123,6 +135,8 @@ type WechatRpcServiceServer interface {
 	Code2Token(context.Context, *CodeReq) (*CodeResp, error)
 	RefreshUserToken(context.Context, *RefreshReq) (*RefreshResp, error)
 	UserToken2UserInfo(context.Context, *TokenReq) (*UserInfoResp, error)
+	// note: miniCode2Session
+	MiniAppCode2Session(context.Context, *CodeReq) (*MiniAppCodeResp, error)
 	// note: web
 	WebRedirectWechat(context.Context, *WebRedirectReq) (*WebRedirectResp, error)
 	WebAutoRedirectWechat(context.Context, *WebAutoRedirectReq) (*WebAutoRedirectResp, error)
@@ -144,6 +158,9 @@ func (UnimplementedWechatRpcServiceServer) RefreshUserToken(context.Context, *Re
 }
 func (UnimplementedWechatRpcServiceServer) UserToken2UserInfo(context.Context, *TokenReq) (*UserInfoResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserToken2UserInfo not implemented")
+}
+func (UnimplementedWechatRpcServiceServer) MiniAppCode2Session(context.Context, *CodeReq) (*MiniAppCodeResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MiniAppCode2Session not implemented")
 }
 func (UnimplementedWechatRpcServiceServer) WebRedirectWechat(context.Context, *WebRedirectReq) (*WebRedirectResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WebRedirectWechat not implemented")
@@ -220,6 +237,24 @@ func _WechatRpcService_UserToken2UserInfo_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(WechatRpcServiceServer).UserToken2UserInfo(ctx, req.(*TokenReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WechatRpcService_MiniAppCode2Session_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CodeReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WechatRpcServiceServer).MiniAppCode2Session(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WechatRpcService_MiniAppCode2Session_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WechatRpcServiceServer).MiniAppCode2Session(ctx, req.(*CodeReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -314,6 +349,10 @@ var WechatRpcService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UserToken2UserInfo",
 			Handler:    _WechatRpcService_UserToken2UserInfo_Handler,
+		},
+		{
+			MethodName: "MiniAppCode2Session",
+			Handler:    _WechatRpcService_MiniAppCode2Session_Handler,
 		},
 		{
 			MethodName: "WebRedirectWechat",
