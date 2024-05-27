@@ -134,6 +134,18 @@ func (c *Sdk) WechatMiniAppCode2Session(in *wechat.CodeReq) (*wechat.MiniAppCode
 	return res, nil
 }
 
+func (c *Sdk) WechatMiniAppCode2Phone(in *wechat.CodeReq) (*wechat.MiniAppCode2PhoneResp, error) {
+	// note: 读取当前使用配置
+	if c.Wechat.UsingConfig == nil {
+		c.Wechat.UsingConfig = c.Wechat.Configs["default"]
+	}
+	res, err := c.Wechat.MiniAppCode2Phone(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 func (c *Sdk) WechatRefreshUserToken(in *wechat.RefreshReq) (*wechat.RefreshResp, error) {
 	// note: 读取当前使用配置
 	if c.Wechat.UsingConfig == nil {
