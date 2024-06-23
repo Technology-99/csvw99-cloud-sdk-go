@@ -110,6 +110,14 @@ func (c *Sdk) ArticleQueryList(in *article.QueryArticleListReq) (*article.QueryA
 	return res, nil
 }
 
+func (c *Sdk) ArticleQueryListQueryIds(in *article.QueryIdsReq) (*article.QueryArticleListResp, error) {
+	res, err := c.Article.QueryListQueryIds(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 func (c *Sdk) ArticleUpdateStatus(in *article.UpdateStatusReq) (*article.Response, error) {
 	res, err := c.Article.UpdateStatus(c.SonyCtx(), in)
 	if err != nil {

@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 文章相关添加推荐站点的字段">
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 微信添加小程序获取手机号的能力">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/wechat/wechat.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/wechat/wechat.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/wechat/wechat_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/wechat/wechat_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/wechat.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/wechat.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/article/article.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/article/article.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/article/article_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/article/article_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/article.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +33,7 @@
   <component name="ProjectId" id="2bJYS8c3eiWLDLnvRMqQcQlaI5P" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,12 +54,14 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;go.vgo&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;go.vgo&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pb" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -89,13 +91,26 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: 删除idea" />
     <MESSAGE value="feat: 添加sls的client" />
     <MESSAGE value="feat: 更新文章的参数" />
     <MESSAGE value="feat: 文章相关添加推荐文章的接口，相关站点添加相关站点的增删改查" />
     <MESSAGE value="feat: 文章相关添加推荐站点的字段" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 文章相关添加推荐站点的字段" />
+    <MESSAGE value="feat: 微信添加小程序基础登陆能力" />
+    <MESSAGE value="feat: 微信添加小程序获取手机号的能力" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 微信添加小程序获取手机号的能力" />
   </component>
   <component name="VgoProject">
     <environment>

@@ -24,6 +24,7 @@ const (
 	ArticleRpcService_Delete_FullMethodName                = "/article.ArticleRpcService/Delete"
 	ArticleRpcService_DeleteIds_FullMethodName             = "/article.ArticleRpcService/DeleteIds"
 	ArticleRpcService_Query_FullMethodName                 = "/article.ArticleRpcService/Query"
+	ArticleRpcService_QueryListQueryIds_FullMethodName     = "/article.ArticleRpcService/QueryListQueryIds"
 	ArticleRpcService_QueryList_FullMethodName             = "/article.ArticleRpcService/QueryList"
 	ArticleRpcService_QueryRecommendList_FullMethodName    = "/article.ArticleRpcService/QueryRecommendList"
 	ArticleRpcService_UpdateStatus_FullMethodName          = "/article.ArticleRpcService/UpdateStatus"
@@ -58,6 +59,7 @@ type ArticleRpcServiceClient interface {
 	Delete(ctx context.Context, in *DeleteReq, opts ...grpc.CallOption) (*Response, error)
 	DeleteIds(ctx context.Context, in *DeleteIdsReq, opts ...grpc.CallOption) (*Response, error)
 	Query(ctx context.Context, in *QueryReq, opts ...grpc.CallOption) (*QueryArticleResp, error)
+	QueryListQueryIds(ctx context.Context, in *QueryIdsReq, opts ...grpc.CallOption) (*QueryArticleListResp, error)
 	QueryList(ctx context.Context, in *QueryArticleListReq, opts ...grpc.CallOption) (*QueryArticleListResp, error)
 	QueryRecommendList(ctx context.Context, in *QueryReq, opts ...grpc.CallOption) (*QueryRecommendListResp, error)
 	UpdateStatus(ctx context.Context, in *UpdateStatusReq, opts ...grpc.CallOption) (*Response, error)
@@ -132,6 +134,15 @@ func (c *articleRpcServiceClient) DeleteIds(ctx context.Context, in *DeleteIdsRe
 func (c *articleRpcServiceClient) Query(ctx context.Context, in *QueryReq, opts ...grpc.CallOption) (*QueryArticleResp, error) {
 	out := new(QueryArticleResp)
 	err := c.cc.Invoke(ctx, ArticleRpcService_Query_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *articleRpcServiceClient) QueryListQueryIds(ctx context.Context, in *QueryIdsReq, opts ...grpc.CallOption) (*QueryArticleListResp, error) {
+	out := new(QueryArticleListResp)
+	err := c.cc.Invoke(ctx, ArticleRpcService_QueryListQueryIds_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -354,6 +365,7 @@ type ArticleRpcServiceServer interface {
 	Delete(context.Context, *DeleteReq) (*Response, error)
 	DeleteIds(context.Context, *DeleteIdsReq) (*Response, error)
 	Query(context.Context, *QueryReq) (*QueryArticleResp, error)
+	QueryListQueryIds(context.Context, *QueryIdsReq) (*QueryArticleListResp, error)
 	QueryList(context.Context, *QueryArticleListReq) (*QueryArticleListResp, error)
 	QueryRecommendList(context.Context, *QueryReq) (*QueryRecommendListResp, error)
 	UpdateStatus(context.Context, *UpdateStatusReq) (*Response, error)
@@ -400,6 +412,9 @@ func (UnimplementedArticleRpcServiceServer) DeleteIds(context.Context, *DeleteId
 }
 func (UnimplementedArticleRpcServiceServer) Query(context.Context, *QueryReq) (*QueryArticleResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Query not implemented")
+}
+func (UnimplementedArticleRpcServiceServer) QueryListQueryIds(context.Context, *QueryIdsReq) (*QueryArticleListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method QueryListQueryIds not implemented")
 }
 func (UnimplementedArticleRpcServiceServer) QueryList(context.Context, *QueryArticleListReq) (*QueryArticleListResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method QueryList not implemented")
@@ -569,6 +584,24 @@ func _ArticleRpcService_Query_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ArticleRpcServiceServer).Query(ctx, req.(*QueryReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ArticleRpcService_QueryListQueryIds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryIdsReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ArticleRpcServiceServer).QueryListQueryIds(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ArticleRpcService_QueryListQueryIds_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ArticleRpcServiceServer).QueryListQueryIds(ctx, req.(*QueryIdsReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1013,6 +1046,10 @@ var ArticleRpcService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Query",
 			Handler:    _ArticleRpcService_Query_Handler,
+		},
+		{
+			MethodName: "QueryListQueryIds",
+			Handler:    _ArticleRpcService_QueryListQueryIds_Handler,
 		},
 		{
 			MethodName: "QueryList",
