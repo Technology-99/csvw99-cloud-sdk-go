@@ -146,6 +146,54 @@ func (c *Sdk) WechatMiniAppCode2Phone(in *wechat.CodeReq) (*wechat.MiniAppCode2P
 	return res, nil
 }
 
+func (c *Sdk) WechatMiniAppJSAPICreateOrder(in *wechat.MiniAppJSAPICreateOrderReq) (*wechat.MiniAppJSAPICreateOrderResp, error) {
+	// note: 读取当前使用配置
+	if c.Wechat.UsingConfig == nil {
+		c.Wechat.UsingConfig = c.Wechat.Configs["default"]
+	}
+	res, err := c.Wechat.MiniAppJSAPICreateOrder(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) WechatMiniAppJSAPIQueryOrder(in *wechat.MiniAppQueryOrderReq) (*wechat.MiniAppQueryOrderResp, error) {
+	// note: 读取当前使用配置
+	if c.Wechat.UsingConfig == nil {
+		c.Wechat.UsingConfig = c.Wechat.Configs["default"]
+	}
+	res, err := c.Wechat.MiniAppJSAPIQueryOrder(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) WechatMiniAppJSAPICloseOrder(in *wechat.MiniAppCloseOrderReq) (*wechat.MiniAppCloseOrderResp, error) {
+	// note: 读取当前使用配置
+	if c.Wechat.UsingConfig == nil {
+		c.Wechat.UsingConfig = c.Wechat.Configs["default"]
+	}
+	res, err := c.Wechat.MiniAppJSAPICloseOrder(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) WechatMiniAppJSAPIRefundOrder(in *wechat.MiniAppRefundOrderReq) (*wechat.MiniAppRefundOrderResp, error) {
+	// note: 读取当前使用配置
+	if c.Wechat.UsingConfig == nil {
+		c.Wechat.UsingConfig = c.Wechat.Configs["default"]
+	}
+	res, err := c.Wechat.MiniAppJSAPIRefundOrder(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 func (c *Sdk) WechatRefreshUserToken(in *wechat.RefreshReq) (*wechat.RefreshResp, error) {
 	// note: 读取当前使用配置
 	if c.Wechat.UsingConfig == nil {

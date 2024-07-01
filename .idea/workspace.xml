@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 微信添加小程序获取手机号的能力">
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: ArticleQueryListQueryIds">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/article/article.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/article/article.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/article/article_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/article/article_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/article.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/wechat/wechat.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/wechat/wechat.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/wechat/wechat_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/wechat/wechat_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/wechat.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/wechat.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,8 @@
     <MESSAGE value="feat: 文章相关添加推荐站点的字段" />
     <MESSAGE value="feat: 微信添加小程序基础登陆能力" />
     <MESSAGE value="feat: 微信添加小程序获取手机号的能力" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 微信添加小程序获取手机号的能力" />
+    <MESSAGE value="feat: ArticleQueryListQueryIds" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: ArticleQueryListQueryIds" />
   </component>
   <component name="VgoProject">
     <environment>

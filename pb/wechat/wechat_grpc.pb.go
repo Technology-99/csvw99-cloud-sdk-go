@@ -24,6 +24,10 @@ const (
 	WechatRpcService_UserToken2UserInfo_FullMethodName         = "/wechat.WechatRpcService/UserToken2UserInfo"
 	WechatRpcService_MiniAppCode2Session_FullMethodName        = "/wechat.WechatRpcService/MiniAppCode2Session"
 	WechatRpcService_MiniAppCode2Phone_FullMethodName          = "/wechat.WechatRpcService/MiniAppCode2Phone"
+	WechatRpcService_MiniAppJSAPICreateOrder_FullMethodName    = "/wechat.WechatRpcService/MiniAppJSAPICreateOrder"
+	WechatRpcService_MiniAppJSAPIQueryOrder_FullMethodName     = "/wechat.WechatRpcService/MiniAppJSAPIQueryOrder"
+	WechatRpcService_MiniAppJSAPICloseOrder_FullMethodName     = "/wechat.WechatRpcService/MiniAppJSAPICloseOrder"
+	WechatRpcService_MiniAppJSAPIRefundOrder_FullMethodName    = "/wechat.WechatRpcService/MiniAppJSAPIRefundOrder"
 	WechatRpcService_WebRedirectWechat_FullMethodName          = "/wechat.WechatRpcService/WebRedirectWechat"
 	WechatRpcService_WebAutoRedirectWechat_FullMethodName      = "/wechat.WechatRpcService/WebAutoRedirectWechat"
 	WechatRpcService_OfficialAccountAccessToken_FullMethodName = "/wechat.WechatRpcService/OfficialAccountAccessToken"
@@ -41,6 +45,10 @@ type WechatRpcServiceClient interface {
 	// note: miniCode2Session
 	MiniAppCode2Session(ctx context.Context, in *CodeReq, opts ...grpc.CallOption) (*MiniAppCodeResp, error)
 	MiniAppCode2Phone(ctx context.Context, in *CodeReq, opts ...grpc.CallOption) (*MiniAppCode2PhoneResp, error)
+	MiniAppJSAPICreateOrder(ctx context.Context, in *MiniAppJSAPICreateOrderReq, opts ...grpc.CallOption) (*MiniAppJSAPICreateOrderResp, error)
+	MiniAppJSAPIQueryOrder(ctx context.Context, in *MiniAppQueryOrderReq, opts ...grpc.CallOption) (*MiniAppQueryOrderResp, error)
+	MiniAppJSAPICloseOrder(ctx context.Context, in *MiniAppCloseOrderReq, opts ...grpc.CallOption) (*MiniAppCloseOrderResp, error)
+	MiniAppJSAPIRefundOrder(ctx context.Context, in *MiniAppRefundOrderReq, opts ...grpc.CallOption) (*MiniAppRefundOrderResp, error)
 	// note: web
 	WebRedirectWechat(ctx context.Context, in *WebRedirectReq, opts ...grpc.CallOption) (*WebRedirectResp, error)
 	WebAutoRedirectWechat(ctx context.Context, in *WebAutoRedirectReq, opts ...grpc.CallOption) (*WebAutoRedirectResp, error)
@@ -102,6 +110,42 @@ func (c *wechatRpcServiceClient) MiniAppCode2Phone(ctx context.Context, in *Code
 	return out, nil
 }
 
+func (c *wechatRpcServiceClient) MiniAppJSAPICreateOrder(ctx context.Context, in *MiniAppJSAPICreateOrderReq, opts ...grpc.CallOption) (*MiniAppJSAPICreateOrderResp, error) {
+	out := new(MiniAppJSAPICreateOrderResp)
+	err := c.cc.Invoke(ctx, WechatRpcService_MiniAppJSAPICreateOrder_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *wechatRpcServiceClient) MiniAppJSAPIQueryOrder(ctx context.Context, in *MiniAppQueryOrderReq, opts ...grpc.CallOption) (*MiniAppQueryOrderResp, error) {
+	out := new(MiniAppQueryOrderResp)
+	err := c.cc.Invoke(ctx, WechatRpcService_MiniAppJSAPIQueryOrder_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *wechatRpcServiceClient) MiniAppJSAPICloseOrder(ctx context.Context, in *MiniAppCloseOrderReq, opts ...grpc.CallOption) (*MiniAppCloseOrderResp, error) {
+	out := new(MiniAppCloseOrderResp)
+	err := c.cc.Invoke(ctx, WechatRpcService_MiniAppJSAPICloseOrder_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *wechatRpcServiceClient) MiniAppJSAPIRefundOrder(ctx context.Context, in *MiniAppRefundOrderReq, opts ...grpc.CallOption) (*MiniAppRefundOrderResp, error) {
+	out := new(MiniAppRefundOrderResp)
+	err := c.cc.Invoke(ctx, WechatRpcService_MiniAppJSAPIRefundOrder_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *wechatRpcServiceClient) WebRedirectWechat(ctx context.Context, in *WebRedirectReq, opts ...grpc.CallOption) (*WebRedirectResp, error) {
 	out := new(WebRedirectResp)
 	err := c.cc.Invoke(ctx, WechatRpcService_WebRedirectWechat_FullMethodName, in, out, opts...)
@@ -149,6 +193,10 @@ type WechatRpcServiceServer interface {
 	// note: miniCode2Session
 	MiniAppCode2Session(context.Context, *CodeReq) (*MiniAppCodeResp, error)
 	MiniAppCode2Phone(context.Context, *CodeReq) (*MiniAppCode2PhoneResp, error)
+	MiniAppJSAPICreateOrder(context.Context, *MiniAppJSAPICreateOrderReq) (*MiniAppJSAPICreateOrderResp, error)
+	MiniAppJSAPIQueryOrder(context.Context, *MiniAppQueryOrderReq) (*MiniAppQueryOrderResp, error)
+	MiniAppJSAPICloseOrder(context.Context, *MiniAppCloseOrderReq) (*MiniAppCloseOrderResp, error)
+	MiniAppJSAPIRefundOrder(context.Context, *MiniAppRefundOrderReq) (*MiniAppRefundOrderResp, error)
 	// note: web
 	WebRedirectWechat(context.Context, *WebRedirectReq) (*WebRedirectResp, error)
 	WebAutoRedirectWechat(context.Context, *WebAutoRedirectReq) (*WebAutoRedirectResp, error)
@@ -176,6 +224,18 @@ func (UnimplementedWechatRpcServiceServer) MiniAppCode2Session(context.Context, 
 }
 func (UnimplementedWechatRpcServiceServer) MiniAppCode2Phone(context.Context, *CodeReq) (*MiniAppCode2PhoneResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MiniAppCode2Phone not implemented")
+}
+func (UnimplementedWechatRpcServiceServer) MiniAppJSAPICreateOrder(context.Context, *MiniAppJSAPICreateOrderReq) (*MiniAppJSAPICreateOrderResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MiniAppJSAPICreateOrder not implemented")
+}
+func (UnimplementedWechatRpcServiceServer) MiniAppJSAPIQueryOrder(context.Context, *MiniAppQueryOrderReq) (*MiniAppQueryOrderResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MiniAppJSAPIQueryOrder not implemented")
+}
+func (UnimplementedWechatRpcServiceServer) MiniAppJSAPICloseOrder(context.Context, *MiniAppCloseOrderReq) (*MiniAppCloseOrderResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MiniAppJSAPICloseOrder not implemented")
+}
+func (UnimplementedWechatRpcServiceServer) MiniAppJSAPIRefundOrder(context.Context, *MiniAppRefundOrderReq) (*MiniAppRefundOrderResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MiniAppJSAPIRefundOrder not implemented")
 }
 func (UnimplementedWechatRpcServiceServer) WebRedirectWechat(context.Context, *WebRedirectReq) (*WebRedirectResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WebRedirectWechat not implemented")
@@ -292,6 +352,78 @@ func _WechatRpcService_MiniAppCode2Phone_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WechatRpcService_MiniAppJSAPICreateOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MiniAppJSAPICreateOrderReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WechatRpcServiceServer).MiniAppJSAPICreateOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WechatRpcService_MiniAppJSAPICreateOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WechatRpcServiceServer).MiniAppJSAPICreateOrder(ctx, req.(*MiniAppJSAPICreateOrderReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WechatRpcService_MiniAppJSAPIQueryOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MiniAppQueryOrderReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WechatRpcServiceServer).MiniAppJSAPIQueryOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WechatRpcService_MiniAppJSAPIQueryOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WechatRpcServiceServer).MiniAppJSAPIQueryOrder(ctx, req.(*MiniAppQueryOrderReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WechatRpcService_MiniAppJSAPICloseOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MiniAppCloseOrderReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WechatRpcServiceServer).MiniAppJSAPICloseOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WechatRpcService_MiniAppJSAPICloseOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WechatRpcServiceServer).MiniAppJSAPICloseOrder(ctx, req.(*MiniAppCloseOrderReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WechatRpcService_MiniAppJSAPIRefundOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MiniAppRefundOrderReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WechatRpcServiceServer).MiniAppJSAPIRefundOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WechatRpcService_MiniAppJSAPIRefundOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WechatRpcServiceServer).MiniAppJSAPIRefundOrder(ctx, req.(*MiniAppRefundOrderReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _WechatRpcService_WebRedirectWechat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WebRedirectReq)
 	if err := dec(in); err != nil {
@@ -390,6 +522,22 @@ var WechatRpcService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MiniAppCode2Phone",
 			Handler:    _WechatRpcService_MiniAppCode2Phone_Handler,
+		},
+		{
+			MethodName: "MiniAppJSAPICreateOrder",
+			Handler:    _WechatRpcService_MiniAppJSAPICreateOrder_Handler,
+		},
+		{
+			MethodName: "MiniAppJSAPIQueryOrder",
+			Handler:    _WechatRpcService_MiniAppJSAPIQueryOrder_Handler,
+		},
+		{
+			MethodName: "MiniAppJSAPICloseOrder",
+			Handler:    _WechatRpcService_MiniAppJSAPICloseOrder_Handler,
+		},
+		{
+			MethodName: "MiniAppJSAPIRefundOrder",
+			Handler:    _WechatRpcService_MiniAppJSAPIRefundOrder_Handler,
 		},
 		{
 			MethodName: "WebRedirectWechat",
