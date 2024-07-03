@@ -16,6 +16,8 @@ func main() {
 
 	s := sdk.NewSdk().WithConfig(sdk.DefaultConfig(AccessKeyId, AccessKeySecret, []string{Endpoint})).AutoAuth().InitCloudC().InitSms()
 
+	logx.Infof("打印sdk版本号: %s", s.GetVersion())
+
 	result, err := s.SmsCheckStatus().SmsSendSms("13331909118", "123456")
 	if err != nil {
 		panic(err)

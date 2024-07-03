@@ -2,6 +2,7 @@ package sdk
 
 import (
 	"context"
+	"embed"
 	"errors"
 	"github.com/Technology-99/csvw99-cloud-sdk-go/sdk/types"
 	"github.com/Technology-99/third_party/response"
@@ -15,7 +16,11 @@ const (
 	keyRequestId = "requestId"
 )
 
+//go:embed "version"
+var VersionF embed.FS
+
 type Sdk struct {
+	Version             string
 	Config              *Config
 	Status              int
 	AccessToken         string
@@ -41,11 +46,19 @@ type Sdk struct {
 }
 
 func NewSdk() *Sdk {
+	versionFile, err := VersionF.ReadFile("version")
+	if err != nil {
+		panic(err)
+	}
 	return &Sdk{
+		Version:  string(versionFile),
 		Status:   types.STATUS_NOT_READY,
 		Context:  context.Background(),
 		Deadline: 300,
 	}
+}
+func (c *Sdk) GetVersion() string {
+	return c.Version
 }
 
 func (c *Sdk) WithConfig(config *Config) *Sdk {

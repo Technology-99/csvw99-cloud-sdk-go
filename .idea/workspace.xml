@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: ArticleQueryListQueryIds">
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 添加微信支付，微信关闭订单，微信取消订单">
+      <change afterPath="$PROJECT_DIR$/sdk/version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/wechat/wechat.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/wechat/wechat.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/wechat/wechat_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/wechat/wechat_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/wechat.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/wechat.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/sms.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/sms.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/sdk.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sdk.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/sls.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sls.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/version" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +65,9 @@
       <recent name="$PROJECT_DIR$/pb" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sdk" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go/example" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -111,7 +116,8 @@
     <MESSAGE value="feat: 微信添加小程序基础登陆能力" />
     <MESSAGE value="feat: 微信添加小程序获取手机号的能力" />
     <MESSAGE value="feat: ArticleQueryListQueryIds" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: ArticleQueryListQueryIds" />
+    <MESSAGE value="feat: 添加微信支付，微信关闭订单，微信取消订单" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加微信支付，微信关闭订单，微信取消订单" />
   </component>
   <component name="VgoProject">
     <environment>
