@@ -14,11 +14,11 @@ func main() {
 	AccessKeyId := os.Getenv("ACCESS_KEY_ID")
 	AccessKeySecret := os.Getenv("ACCESS_KEY_SECRET")
 
-	s := sdk.NewSdk().WithConfig(sdk.DefaultConfig(AccessKeyId, AccessKeySecret, []string{Endpoint})).AutoAuth().InitCloudC().InitSms()
+	s := sdk.NewSdk().WithConfig(sdk.DefaultConfig(AccessKeyId, AccessKeySecret, []string{Endpoint})).AutoAuth().InitCloudC().InitMix()
 
 	logx.Infof("打印sdk版本号: %s", s.GetVersion())
 
-	result, err := s.SmsCheckStatus().SmsSendSms("13331909118", "123456")
+	result, err := s.MixCheckStatus().MixSendSms("default", "13331909118", "123456")
 	if err != nil {
 		panic(err)
 	}

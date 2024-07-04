@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: V4架构">
-      <change afterPath="$PROJECT_DIR$/pb/mix/mix.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pb/mix/mix_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/mix.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/captcha.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/ems.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/oss.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/sdk.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sdk.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/sms.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ems.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/ems.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/sms.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/sms.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/mix/mix.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/mix/mix.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/mix/mix_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/mix/mix_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/mix.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/mix.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

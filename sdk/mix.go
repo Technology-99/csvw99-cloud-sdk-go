@@ -8,7 +8,7 @@ import (
 )
 
 type Mix struct {
-	mix.MixServiceClient
+	mix.MixRpcServiceClient
 	Num    int64
 	Status int
 	Retry  int
@@ -20,11 +20,11 @@ func NewMix(RpcClientConf *zrpc.RpcClientConf) *Mix {
 			"localhost:8080",
 		}
 	}
-	client := mix.NewMixServiceClient(zrpc.MustNewClient(*RpcClientConf).Conn())
+	client := mix.NewMixRpcServiceClient(zrpc.MustNewClient(*RpcClientConf).Conn())
 
 	return &Mix{
-		MixServiceClient: client,
-		Num:              1,
+		MixRpcServiceClient: client,
+		Num:                 1,
 	}
 }
 

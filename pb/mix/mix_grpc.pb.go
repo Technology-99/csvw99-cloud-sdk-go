@@ -19,20 +19,20 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	MixService_SendSms_FullMethodName            = "/mix.MixService/SendSms"
-	MixService_CheckSms_FullMethodName           = "/mix.MixService/CheckSms"
-	MixService_CheckEmsRpc_FullMethodName        = "/mix.MixService/CheckEmsRpc"
-	MixService_SendEmsRpc_FullMethodName         = "/mix.MixService/SendEmsRpc"
-	MixService_GenerateUploadSign_FullMethodName = "/mix.MixService/GenerateUploadSign"
-	MixService_CheckUploadResult_FullMethodName  = "/mix.MixService/CheckUploadResult"
-	MixService_Callback_FullMethodName           = "/mix.MixService/Callback"
-	MixService_CaptchaGenerate_FullMethodName    = "/mix.MixService/CaptchaGenerate"
+	MixRpcService_SendSms_FullMethodName            = "/mix.MixRpcService/SendSms"
+	MixRpcService_CheckSms_FullMethodName           = "/mix.MixRpcService/CheckSms"
+	MixRpcService_CheckEmsRpc_FullMethodName        = "/mix.MixRpcService/CheckEmsRpc"
+	MixRpcService_SendEmsRpc_FullMethodName         = "/mix.MixRpcService/SendEmsRpc"
+	MixRpcService_GenerateUploadSign_FullMethodName = "/mix.MixRpcService/GenerateUploadSign"
+	MixRpcService_CheckUploadResult_FullMethodName  = "/mix.MixRpcService/CheckUploadResult"
+	MixRpcService_Callback_FullMethodName           = "/mix.MixRpcService/Callback"
+	MixRpcService_CaptchaGenerate_FullMethodName    = "/mix.MixRpcService/CaptchaGenerate"
 )
 
-// MixServiceClient is the client API for MixService service.
+// MixRpcServiceClient is the client API for MixRpcService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type MixServiceClient interface {
+type MixRpcServiceClient interface {
 	// note: 短信服务
 	SendSms(ctx context.Context, in *SmsParams, opts ...grpc.CallOption) (*SmsResp, error)
 	CheckSms(ctx context.Context, in *SmsSearchParams, opts ...grpc.CallOption) (*SmsResp, error)
@@ -47,90 +47,90 @@ type MixServiceClient interface {
 	CaptchaGenerate(ctx context.Context, in *CaptchaReq, opts ...grpc.CallOption) (*CaptchaResp, error)
 }
 
-type mixServiceClient struct {
+type mixRpcServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewMixServiceClient(cc grpc.ClientConnInterface) MixServiceClient {
-	return &mixServiceClient{cc}
+func NewMixRpcServiceClient(cc grpc.ClientConnInterface) MixRpcServiceClient {
+	return &mixRpcServiceClient{cc}
 }
 
-func (c *mixServiceClient) SendSms(ctx context.Context, in *SmsParams, opts ...grpc.CallOption) (*SmsResp, error) {
+func (c *mixRpcServiceClient) SendSms(ctx context.Context, in *SmsParams, opts ...grpc.CallOption) (*SmsResp, error) {
 	out := new(SmsResp)
-	err := c.cc.Invoke(ctx, MixService_SendSms_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, MixRpcService_SendSms_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mixServiceClient) CheckSms(ctx context.Context, in *SmsSearchParams, opts ...grpc.CallOption) (*SmsResp, error) {
+func (c *mixRpcServiceClient) CheckSms(ctx context.Context, in *SmsSearchParams, opts ...grpc.CallOption) (*SmsResp, error) {
 	out := new(SmsResp)
-	err := c.cc.Invoke(ctx, MixService_CheckSms_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, MixRpcService_CheckSms_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mixServiceClient) CheckEmsRpc(ctx context.Context, in *EmsReq, opts ...grpc.CallOption) (*EmsResp, error) {
+func (c *mixRpcServiceClient) CheckEmsRpc(ctx context.Context, in *EmsReq, opts ...grpc.CallOption) (*EmsResp, error) {
 	out := new(EmsResp)
-	err := c.cc.Invoke(ctx, MixService_CheckEmsRpc_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, MixRpcService_CheckEmsRpc_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mixServiceClient) SendEmsRpc(ctx context.Context, in *EmsReq, opts ...grpc.CallOption) (*EmsResp, error) {
+func (c *mixRpcServiceClient) SendEmsRpc(ctx context.Context, in *EmsReq, opts ...grpc.CallOption) (*EmsResp, error) {
 	out := new(EmsResp)
-	err := c.cc.Invoke(ctx, MixService_SendEmsRpc_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, MixRpcService_SendEmsRpc_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mixServiceClient) GenerateUploadSign(ctx context.Context, in *GenerateUploadSignParams, opts ...grpc.CallOption) (*GenerateUploadSignParamsResp, error) {
+func (c *mixRpcServiceClient) GenerateUploadSign(ctx context.Context, in *GenerateUploadSignParams, opts ...grpc.CallOption) (*GenerateUploadSignParamsResp, error) {
 	out := new(GenerateUploadSignParamsResp)
-	err := c.cc.Invoke(ctx, MixService_GenerateUploadSign_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, MixRpcService_GenerateUploadSign_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mixServiceClient) CheckUploadResult(ctx context.Context, in *CheckUploadResultParams, opts ...grpc.CallOption) (*CheckUploadResultResp, error) {
+func (c *mixRpcServiceClient) CheckUploadResult(ctx context.Context, in *CheckUploadResultParams, opts ...grpc.CallOption) (*CheckUploadResultResp, error) {
 	out := new(CheckUploadResultResp)
-	err := c.cc.Invoke(ctx, MixService_CheckUploadResult_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, MixRpcService_CheckUploadResult_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mixServiceClient) Callback(ctx context.Context, in *CallbackParams, opts ...grpc.CallOption) (*CallbackResp, error) {
+func (c *mixRpcServiceClient) Callback(ctx context.Context, in *CallbackParams, opts ...grpc.CallOption) (*CallbackResp, error) {
 	out := new(CallbackResp)
-	err := c.cc.Invoke(ctx, MixService_Callback_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, MixRpcService_Callback_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mixServiceClient) CaptchaGenerate(ctx context.Context, in *CaptchaReq, opts ...grpc.CallOption) (*CaptchaResp, error) {
+func (c *mixRpcServiceClient) CaptchaGenerate(ctx context.Context, in *CaptchaReq, opts ...grpc.CallOption) (*CaptchaResp, error) {
 	out := new(CaptchaResp)
-	err := c.cc.Invoke(ctx, MixService_CaptchaGenerate_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, MixRpcService_CaptchaGenerate_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// MixServiceServer is the server API for MixService service.
-// All implementations must embed UnimplementedMixServiceServer
+// MixRpcServiceServer is the server API for MixRpcService service.
+// All implementations must embed UnimplementedMixRpcServiceServer
 // for forward compatibility
-type MixServiceServer interface {
+type MixRpcServiceServer interface {
 	// note: 短信服务
 	SendSms(context.Context, *SmsParams) (*SmsResp, error)
 	CheckSms(context.Context, *SmsSearchParams) (*SmsResp, error)
@@ -143,232 +143,232 @@ type MixServiceServer interface {
 	Callback(context.Context, *CallbackParams) (*CallbackResp, error)
 	// note: 验证码服务
 	CaptchaGenerate(context.Context, *CaptchaReq) (*CaptchaResp, error)
-	mustEmbedUnimplementedMixServiceServer()
+	mustEmbedUnimplementedMixRpcServiceServer()
 }
 
-// UnimplementedMixServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedMixServiceServer struct {
+// UnimplementedMixRpcServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedMixRpcServiceServer struct {
 }
 
-func (UnimplementedMixServiceServer) SendSms(context.Context, *SmsParams) (*SmsResp, error) {
+func (UnimplementedMixRpcServiceServer) SendSms(context.Context, *SmsParams) (*SmsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendSms not implemented")
 }
-func (UnimplementedMixServiceServer) CheckSms(context.Context, *SmsSearchParams) (*SmsResp, error) {
+func (UnimplementedMixRpcServiceServer) CheckSms(context.Context, *SmsSearchParams) (*SmsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckSms not implemented")
 }
-func (UnimplementedMixServiceServer) CheckEmsRpc(context.Context, *EmsReq) (*EmsResp, error) {
+func (UnimplementedMixRpcServiceServer) CheckEmsRpc(context.Context, *EmsReq) (*EmsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckEmsRpc not implemented")
 }
-func (UnimplementedMixServiceServer) SendEmsRpc(context.Context, *EmsReq) (*EmsResp, error) {
+func (UnimplementedMixRpcServiceServer) SendEmsRpc(context.Context, *EmsReq) (*EmsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendEmsRpc not implemented")
 }
-func (UnimplementedMixServiceServer) GenerateUploadSign(context.Context, *GenerateUploadSignParams) (*GenerateUploadSignParamsResp, error) {
+func (UnimplementedMixRpcServiceServer) GenerateUploadSign(context.Context, *GenerateUploadSignParams) (*GenerateUploadSignParamsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateUploadSign not implemented")
 }
-func (UnimplementedMixServiceServer) CheckUploadResult(context.Context, *CheckUploadResultParams) (*CheckUploadResultResp, error) {
+func (UnimplementedMixRpcServiceServer) CheckUploadResult(context.Context, *CheckUploadResultParams) (*CheckUploadResultResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckUploadResult not implemented")
 }
-func (UnimplementedMixServiceServer) Callback(context.Context, *CallbackParams) (*CallbackResp, error) {
+func (UnimplementedMixRpcServiceServer) Callback(context.Context, *CallbackParams) (*CallbackResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Callback not implemented")
 }
-func (UnimplementedMixServiceServer) CaptchaGenerate(context.Context, *CaptchaReq) (*CaptchaResp, error) {
+func (UnimplementedMixRpcServiceServer) CaptchaGenerate(context.Context, *CaptchaReq) (*CaptchaResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CaptchaGenerate not implemented")
 }
-func (UnimplementedMixServiceServer) mustEmbedUnimplementedMixServiceServer() {}
+func (UnimplementedMixRpcServiceServer) mustEmbedUnimplementedMixRpcServiceServer() {}
 
-// UnsafeMixServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to MixServiceServer will
+// UnsafeMixRpcServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MixRpcServiceServer will
 // result in compilation errors.
-type UnsafeMixServiceServer interface {
-	mustEmbedUnimplementedMixServiceServer()
+type UnsafeMixRpcServiceServer interface {
+	mustEmbedUnimplementedMixRpcServiceServer()
 }
 
-func RegisterMixServiceServer(s grpc.ServiceRegistrar, srv MixServiceServer) {
-	s.RegisterService(&MixService_ServiceDesc, srv)
+func RegisterMixRpcServiceServer(s grpc.ServiceRegistrar, srv MixRpcServiceServer) {
+	s.RegisterService(&MixRpcService_ServiceDesc, srv)
 }
 
-func _MixService_SendSms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MixRpcService_SendSms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SmsParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MixServiceServer).SendSms(ctx, in)
+		return srv.(MixRpcServiceServer).SendSms(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: MixService_SendSms_FullMethodName,
+		FullMethod: MixRpcService_SendSms_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MixServiceServer).SendSms(ctx, req.(*SmsParams))
+		return srv.(MixRpcServiceServer).SendSms(ctx, req.(*SmsParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MixService_CheckSms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MixRpcService_CheckSms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SmsSearchParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MixServiceServer).CheckSms(ctx, in)
+		return srv.(MixRpcServiceServer).CheckSms(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: MixService_CheckSms_FullMethodName,
+		FullMethod: MixRpcService_CheckSms_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MixServiceServer).CheckSms(ctx, req.(*SmsSearchParams))
+		return srv.(MixRpcServiceServer).CheckSms(ctx, req.(*SmsSearchParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MixService_CheckEmsRpc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MixRpcService_CheckEmsRpc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(EmsReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MixServiceServer).CheckEmsRpc(ctx, in)
+		return srv.(MixRpcServiceServer).CheckEmsRpc(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: MixService_CheckEmsRpc_FullMethodName,
+		FullMethod: MixRpcService_CheckEmsRpc_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MixServiceServer).CheckEmsRpc(ctx, req.(*EmsReq))
+		return srv.(MixRpcServiceServer).CheckEmsRpc(ctx, req.(*EmsReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MixService_SendEmsRpc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MixRpcService_SendEmsRpc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(EmsReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MixServiceServer).SendEmsRpc(ctx, in)
+		return srv.(MixRpcServiceServer).SendEmsRpc(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: MixService_SendEmsRpc_FullMethodName,
+		FullMethod: MixRpcService_SendEmsRpc_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MixServiceServer).SendEmsRpc(ctx, req.(*EmsReq))
+		return srv.(MixRpcServiceServer).SendEmsRpc(ctx, req.(*EmsReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MixService_GenerateUploadSign_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MixRpcService_GenerateUploadSign_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GenerateUploadSignParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MixServiceServer).GenerateUploadSign(ctx, in)
+		return srv.(MixRpcServiceServer).GenerateUploadSign(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: MixService_GenerateUploadSign_FullMethodName,
+		FullMethod: MixRpcService_GenerateUploadSign_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MixServiceServer).GenerateUploadSign(ctx, req.(*GenerateUploadSignParams))
+		return srv.(MixRpcServiceServer).GenerateUploadSign(ctx, req.(*GenerateUploadSignParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MixService_CheckUploadResult_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MixRpcService_CheckUploadResult_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CheckUploadResultParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MixServiceServer).CheckUploadResult(ctx, in)
+		return srv.(MixRpcServiceServer).CheckUploadResult(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: MixService_CheckUploadResult_FullMethodName,
+		FullMethod: MixRpcService_CheckUploadResult_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MixServiceServer).CheckUploadResult(ctx, req.(*CheckUploadResultParams))
+		return srv.(MixRpcServiceServer).CheckUploadResult(ctx, req.(*CheckUploadResultParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MixService_Callback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MixRpcService_Callback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CallbackParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MixServiceServer).Callback(ctx, in)
+		return srv.(MixRpcServiceServer).Callback(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: MixService_Callback_FullMethodName,
+		FullMethod: MixRpcService_Callback_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MixServiceServer).Callback(ctx, req.(*CallbackParams))
+		return srv.(MixRpcServiceServer).Callback(ctx, req.(*CallbackParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _MixService_CaptchaGenerate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MixRpcService_CaptchaGenerate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CaptchaReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MixServiceServer).CaptchaGenerate(ctx, in)
+		return srv.(MixRpcServiceServer).CaptchaGenerate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: MixService_CaptchaGenerate_FullMethodName,
+		FullMethod: MixRpcService_CaptchaGenerate_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MixServiceServer).CaptchaGenerate(ctx, req.(*CaptchaReq))
+		return srv.(MixRpcServiceServer).CaptchaGenerate(ctx, req.(*CaptchaReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// MixService_ServiceDesc is the grpc.ServiceDesc for MixService service.
+// MixRpcService_ServiceDesc is the grpc.ServiceDesc for MixRpcService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var MixService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "mix.MixService",
-	HandlerType: (*MixServiceServer)(nil),
+var MixRpcService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "mix.MixRpcService",
+	HandlerType: (*MixRpcServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SendSms",
-			Handler:    _MixService_SendSms_Handler,
+			Handler:    _MixRpcService_SendSms_Handler,
 		},
 		{
 			MethodName: "CheckSms",
-			Handler:    _MixService_CheckSms_Handler,
+			Handler:    _MixRpcService_CheckSms_Handler,
 		},
 		{
 			MethodName: "CheckEmsRpc",
-			Handler:    _MixService_CheckEmsRpc_Handler,
+			Handler:    _MixRpcService_CheckEmsRpc_Handler,
 		},
 		{
 			MethodName: "SendEmsRpc",
-			Handler:    _MixService_SendEmsRpc_Handler,
+			Handler:    _MixRpcService_SendEmsRpc_Handler,
 		},
 		{
 			MethodName: "GenerateUploadSign",
-			Handler:    _MixService_GenerateUploadSign_Handler,
+			Handler:    _MixRpcService_GenerateUploadSign_Handler,
 		},
 		{
 			MethodName: "CheckUploadResult",
-			Handler:    _MixService_CheckUploadResult_Handler,
+			Handler:    _MixRpcService_CheckUploadResult_Handler,
 		},
 		{
 			MethodName: "Callback",
-			Handler:    _MixService_Callback_Handler,
+			Handler:    _MixRpcService_Callback_Handler,
 		},
 		{
 			MethodName: "CaptchaGenerate",
-			Handler:    _MixService_CaptchaGenerate_Handler,
+			Handler:    _MixRpcService_CaptchaGenerate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
