@@ -28,6 +28,7 @@ const (
 	ThirdPartyRpcService_WechatWebAutoRedirectWechat_FullMethodName      = "/thirdparty.ThirdPartyRpcService/WechatWebAutoRedirectWechat"
 	ThirdPartyRpcService_WechatOfficialAccountAccessToken_FullMethodName = "/thirdparty.ThirdPartyRpcService/WechatOfficialAccountAccessToken"
 	ThirdPartyRpcService_WechatOfficialAccountJsApiTicket_FullMethodName = "/thirdparty.ThirdPartyRpcService/WechatOfficialAccountJsApiTicket"
+	ThirdPartyRpcService_WechatOfficialGenShareConfig_FullMethodName     = "/thirdparty.ThirdPartyRpcService/WechatOfficialGenShareConfig"
 	ThirdPartyRpcService_DYMiniGameCode2Token_FullMethodName             = "/thirdparty.ThirdPartyRpcService/DYMiniGameCode2Token"
 	ThirdPartyRpcService_DYMiniGameOAAccessToken_FullMethodName          = "/thirdparty.ThirdPartyRpcService/DYMiniGameOAAccessToken"
 )
@@ -50,6 +51,7 @@ type ThirdPartyRpcServiceClient interface {
 	// note: base OfficialAccount 公众号基础能力
 	WechatOfficialAccountAccessToken(ctx context.Context, in *WechatOaKeyReq, opts ...grpc.CallOption) (*WechatOaAccessTokenResp, error)
 	WechatOfficialAccountJsApiTicket(ctx context.Context, in *WechatOaKeyReq, opts ...grpc.CallOption) (*WechatOaJsApiTicketResp, error)
+	WechatOfficialGenShareConfig(ctx context.Context, in *WechatGenShareConfigReq, opts ...grpc.CallOption) (*WechatGenShareConfigResp, error)
 	// note: 抖音专区
 	DYMiniGameCode2Token(ctx context.Context, in *DYMiniGameCode2TokenReq, opts ...grpc.CallOption) (*DYMiniGameCode2TokenResp, error)
 	// note: base Game 小游戏基础能力
@@ -145,6 +147,15 @@ func (c *thirdPartyRpcServiceClient) WechatOfficialAccountJsApiTicket(ctx contex
 	return out, nil
 }
 
+func (c *thirdPartyRpcServiceClient) WechatOfficialGenShareConfig(ctx context.Context, in *WechatGenShareConfigReq, opts ...grpc.CallOption) (*WechatGenShareConfigResp, error) {
+	out := new(WechatGenShareConfigResp)
+	err := c.cc.Invoke(ctx, ThirdPartyRpcService_WechatOfficialGenShareConfig_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *thirdPartyRpcServiceClient) DYMiniGameCode2Token(ctx context.Context, in *DYMiniGameCode2TokenReq, opts ...grpc.CallOption) (*DYMiniGameCode2TokenResp, error) {
 	out := new(DYMiniGameCode2TokenResp)
 	err := c.cc.Invoke(ctx, ThirdPartyRpcService_DYMiniGameCode2Token_FullMethodName, in, out, opts...)
@@ -181,6 +192,7 @@ type ThirdPartyRpcServiceServer interface {
 	// note: base OfficialAccount 公众号基础能力
 	WechatOfficialAccountAccessToken(context.Context, *WechatOaKeyReq) (*WechatOaAccessTokenResp, error)
 	WechatOfficialAccountJsApiTicket(context.Context, *WechatOaKeyReq) (*WechatOaJsApiTicketResp, error)
+	WechatOfficialGenShareConfig(context.Context, *WechatGenShareConfigReq) (*WechatGenShareConfigResp, error)
 	// note: 抖音专区
 	DYMiniGameCode2Token(context.Context, *DYMiniGameCode2TokenReq) (*DYMiniGameCode2TokenResp, error)
 	// note: base Game 小游戏基础能力
@@ -218,6 +230,9 @@ func (UnimplementedThirdPartyRpcServiceServer) WechatOfficialAccountAccessToken(
 }
 func (UnimplementedThirdPartyRpcServiceServer) WechatOfficialAccountJsApiTicket(context.Context, *WechatOaKeyReq) (*WechatOaJsApiTicketResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WechatOfficialAccountJsApiTicket not implemented")
+}
+func (UnimplementedThirdPartyRpcServiceServer) WechatOfficialGenShareConfig(context.Context, *WechatGenShareConfigReq) (*WechatGenShareConfigResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WechatOfficialGenShareConfig not implemented")
 }
 func (UnimplementedThirdPartyRpcServiceServer) DYMiniGameCode2Token(context.Context, *DYMiniGameCode2TokenReq) (*DYMiniGameCode2TokenResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DYMiniGameCode2Token not implemented")
@@ -400,6 +415,24 @@ func _ThirdPartyRpcService_WechatOfficialAccountJsApiTicket_Handler(srv interfac
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ThirdPartyRpcService_WechatOfficialGenShareConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WechatGenShareConfigReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ThirdPartyRpcServiceServer).WechatOfficialGenShareConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ThirdPartyRpcService_WechatOfficialGenShareConfig_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ThirdPartyRpcServiceServer).WechatOfficialGenShareConfig(ctx, req.(*WechatGenShareConfigReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ThirdPartyRpcService_DYMiniGameCode2Token_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DYMiniGameCode2TokenReq)
 	if err := dec(in); err != nil {
@@ -478,6 +511,10 @@ var ThirdPartyRpcService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WechatOfficialAccountJsApiTicket",
 			Handler:    _ThirdPartyRpcService_WechatOfficialAccountJsApiTicket_Handler,
+		},
+		{
+			MethodName: "WechatOfficialGenShareConfig",
+			Handler:    _ThirdPartyRpcService_WechatOfficialGenShareConfig_Handler,
 		},
 		{
 			MethodName: "DYMiniGameCode2Token",

@@ -117,6 +117,14 @@ func (s *Sdk) WechatOfficialAccountJsApiTicket(in *thirdparty.WechatOaKeyReq) (*
 	return res, nil
 }
 
+func (s *Sdk) WechatOfficialGenShareConfig(in *thirdparty.WechatGenShareConfigReq) (*thirdparty.WechatGenShareConfigResp, error) {
+	res, err := s.ThirdParty.WechatOfficialGenShareConfig(s.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
 func (c *Sdk) DYMiniGameCode2Token(in *thirdparty.DYMiniGameCode2TokenReq) (*thirdparty.DYMiniGameCode2TokenResp, error) {
 	res, err := c.ThirdParty.DYMiniGameCode2Token(c.SonyCtx(), in)
 	if err != nil {
