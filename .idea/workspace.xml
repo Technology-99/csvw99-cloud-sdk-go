@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: V4架构">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/h5.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/h5.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

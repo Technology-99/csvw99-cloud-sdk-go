@@ -326,3 +326,60 @@ func (c *Sdk) LabelUpdateStatus(in *h5.UpdateStatusReq) (*h5.Response, error) {
 	}
 	return res, nil
 }
+
+// note: 用户增删改查
+func (c *Sdk) MinisiteUserCreate(in *h5.CreateUserReq) (*h5.CreateResponse, error) {
+	res, err := c.H5.MiniSiteUserCreate(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) MinisiteUserUpdate(in *h5.UpdateUserReq) (*h5.Response, error) {
+	res, err := c.H5.MiniSiteUserUpdate(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) MinisiteUserDelete(in *h5.DeleteReq) (*h5.Response, error) {
+	res, err := c.H5.MiniSiteUserDelete(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) MinisiteUserDeleteIds(in *h5.DeleteIdsReq) (*h5.Response, error) {
+	res, err := c.H5.MiniSiteUserDeleteIds(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) MinisiteUserQuery(in *h5.QueryUserReq) (*h5.QueryUserResp, error) {
+	res, err := c.H5.MiniSiteUserQuery(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) MinisiteUserQueryList(in *h5.QueryUserListReq) (*h5.QueryUserListResp, error) {
+	res, err := c.H5.MiniSiteUserQueryList(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (c *Sdk) MinisiteUserUpdateStatus(in *h5.UpdateStatusReq) (*h5.Response, error) {
+	res, err := c.H5.MiniSiteUserUpdateStatus(c.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
