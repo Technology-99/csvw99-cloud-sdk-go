@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 添加微信支付，微信关闭订单，微信取消订单">
-      <change afterPath="$PROJECT_DIR$/sdk/version" afterDir="false" />
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: V4架构">
+      <change afterPath="$PROJECT_DIR$/pb/mix/mix.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pb/mix/mix_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/mix.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/sms.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/sms.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/captcha.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/ems.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/oss.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/sdk.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sdk.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/sls.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sls.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/sms.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.19.13" />
   <component name="Git.Settings">
@@ -41,25 +52,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/joker/Documents/Github/tech/csvw99-cloud-sdk-go/pb&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;go.vgo&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/joker/Documents/Github/tech/csvw99-cloud-sdk-go/pb",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "go.vgo",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pb" />
@@ -108,6 +120,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="feat: 删除idea" />
     <MESSAGE value="feat: 添加sls的client" />
     <MESSAGE value="feat: 更新文章的参数" />
@@ -117,14 +130,16 @@
     <MESSAGE value="feat: 微信添加小程序获取手机号的能力" />
     <MESSAGE value="feat: ArticleQueryListQueryIds" />
     <MESSAGE value="feat: 添加微信支付，微信关闭订单，微信取消订单" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加微信支付，微信关闭订单，微信取消订单" />
+    <MESSAGE value="feat: V4架构" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: V4架构" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
     <environment>
       <map>
-        <entry key="ACCESS_KEY_ID" value="QCLBR4eL0JQMcuwB" />
-        <entry key="ACCESS_KEY_SECRET" value="F1B105A70100F03264Ded0281D871D66D62F5001" />
-        <entry key="ENDPOINT" value="news-rpc-api.lego.cn:443" />
+        <entry key="ACCESS_KEY_ID" value="od8NORDMU4LqnQiR" />
+        <entry key="ACCESS_KEY_SECRET" value="132939C9B0D4476F25C018350171F4B0981Ce66C" />
+        <entry key="ENDPOINT" value="core.csvw88.com:8080" />
         <entry key="GOPROXY" value="goproxy.cn" />
       </map>
     </environment>

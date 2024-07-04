@@ -34,15 +34,12 @@ type Sdk struct {
 	Article             *Article
 	SubTenant           *SubTenant
 	CloudC              *CloudC
-	Ems                 *Ems
-	Oss                 *Oss
-	Sms                 *Sms
 	Wechat              *Wechat
-	Captcha             *Captcha
 	Label               *Label
 	Sls                 *Sls
 	Minisite            *Minisite
 	Douyin              *Douyin
+	Mix                 *Mix
 }
 
 func NewSdk() *Sdk {
