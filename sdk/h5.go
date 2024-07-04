@@ -22,7 +22,7 @@ type H5 struct {
 	Retry  int
 }
 
-func NewArticle(RpcClientConf *zrpc.RpcClientConf) *H5 {
+func NewH5(RpcClientConf *zrpc.RpcClientConf) *H5 {
 	if len(RpcClientConf.Endpoints) == 0 {
 		RpcClientConf.Endpoints = []string{
 			"localhost:8080",
@@ -36,19 +36,19 @@ func NewArticle(RpcClientConf *zrpc.RpcClientConf) *H5 {
 	}
 }
 
-func (c *Sdk) InitArticle() *Sdk {
-	c.H5 = NewArticle(c.Config.RpcClientConf)
+func (c *Sdk) InitH5() *Sdk {
+	c.H5 = NewH5(c.Config.RpcClientConf)
 	c.H5.Status = types.STATUS_READY
 	c.H5.Retry += 1
 	return c
 }
 
-func (c *Sdk) ArticleCheckStatus() *Sdk {
+func (c *Sdk) H5CheckStatus() *Sdk {
 	if c.H5.Status != types.STATUS_READY {
 		if c.H5.Retry >= c.Config.MaxRetryTimes {
 			panic(types.ErrMaxErrTimes)
 		} else {
-			c.InitArticle()
+			c.InitH5()
 		}
 	}
 	return c
