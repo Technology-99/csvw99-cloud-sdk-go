@@ -5,40 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: V4架构">
-      <change afterPath="$PROJECT_DIR$/pb/h5/h5.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pb/h5/h5_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pb/thirdparty/thirdparty.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pb/thirdparty/thirdparty_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/h5.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/thirdparty.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easy_example.go" beforeDir="false" afterPath="$PROJECT_DIR$/easy_example.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/sms.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/sms.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/captcha/captcha.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/captcha/captcha_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/cloudc/cloudc_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/douyin/douyin.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/douyin/douyin_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/ems/ems.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/ems/ems_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/oss/oss.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/oss/oss_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/shield/shield.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/shield/shield.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/shield/shield_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/shield/shield_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/sms/sms.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/sms/sms_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/wechat/wechat.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/wechat/wechat_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/article.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/cloudc.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/cloudc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/douyin.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/label.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/minisite.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/sdk.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sdk.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/sub_tenant.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/wechat.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,26 +43,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/joker/Documents/Github/tech/csvw99-cloud-sdk-go/pb&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;go.vgo&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go.executor": "Run",
+    "Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/joker/Documents/Github/tech/csvw99-cloud-sdk-go/pb",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "go.vgo",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pb" />
@@ -105,7 +73,16 @@
       <recent name="$PROJECT_DIR$/sdk" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go">
+    <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="csvw99-cloud-sdk-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Technology-99/csvw99-cloud-sdk-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/easy_example.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go/example" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="csvw99-cloud-sdk-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -117,6 +94,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go" />
         <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
       </list>
     </recent_temporary>
