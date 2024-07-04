@@ -9,7 +9,7 @@ import (
 )
 
 type Auth struct {
-	shield.ShieldServiceClient
+	shield.ShieldRpcServiceClient
 	Num     int64
 	Timeout time.Duration
 }
@@ -20,7 +20,7 @@ func NewAuth(RpcClientConf *zrpc.RpcClientConf) *Auth {
 			"localhost:8080",
 		}
 	}
-	clent := shield.NewShieldServiceClient(zrpc.MustNewClient(*RpcClientConf).Conn())
+	clent := shield.NewShieldRpcServiceClient(zrpc.MustNewClient(*RpcClientConf).Conn())
 
 	return &Auth{
 		clent,

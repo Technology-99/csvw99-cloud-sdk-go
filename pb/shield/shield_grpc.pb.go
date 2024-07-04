@@ -19,15 +19,15 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ShieldService_Ping_FullMethodName             = "/shield.ShieldService/Ping"
-	ShieldService_AuthLoginWithApi_FullMethodName = "/shield.ShieldService/AuthLoginWithApi"
-	ShieldService_RefreshToken_FullMethodName     = "/shield.ShieldService/RefreshToken"
+	ShieldRpcService_Ping_FullMethodName             = "/shield.ShieldRpcService/Ping"
+	ShieldRpcService_AuthLoginWithApi_FullMethodName = "/shield.ShieldRpcService/AuthLoginWithApi"
+	ShieldRpcService_RefreshToken_FullMethodName     = "/shield.ShieldRpcService/RefreshToken"
 )
 
-// ShieldServiceClient is the client API for ShieldService service.
+// ShieldRpcServiceClient is the client API for ShieldRpcService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ShieldServiceClient interface {
+type ShieldRpcServiceClient interface {
 	// note: ping服务 必要存在
 	Ping(ctx context.Context, in *PingParams, opts ...grpc.CallOption) (*PingResp, error)
 	// note: 通过API方式登录, 必要存在
@@ -36,152 +36,152 @@ type ShieldServiceClient interface {
 	RefreshToken(ctx context.Context, in *RefreshTokenParams, opts ...grpc.CallOption) (*RefreshTokenResp, error)
 }
 
-type shieldServiceClient struct {
+type shieldRpcServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewShieldServiceClient(cc grpc.ClientConnInterface) ShieldServiceClient {
-	return &shieldServiceClient{cc}
+func NewShieldRpcServiceClient(cc grpc.ClientConnInterface) ShieldRpcServiceClient {
+	return &shieldRpcServiceClient{cc}
 }
 
-func (c *shieldServiceClient) Ping(ctx context.Context, in *PingParams, opts ...grpc.CallOption) (*PingResp, error) {
+func (c *shieldRpcServiceClient) Ping(ctx context.Context, in *PingParams, opts ...grpc.CallOption) (*PingResp, error) {
 	out := new(PingResp)
-	err := c.cc.Invoke(ctx, ShieldService_Ping_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ShieldRpcService_Ping_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *shieldServiceClient) AuthLoginWithApi(ctx context.Context, in *AuthApiParams, opts ...grpc.CallOption) (*AuthApiResp, error) {
+func (c *shieldRpcServiceClient) AuthLoginWithApi(ctx context.Context, in *AuthApiParams, opts ...grpc.CallOption) (*AuthApiResp, error) {
 	out := new(AuthApiResp)
-	err := c.cc.Invoke(ctx, ShieldService_AuthLoginWithApi_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ShieldRpcService_AuthLoginWithApi_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *shieldServiceClient) RefreshToken(ctx context.Context, in *RefreshTokenParams, opts ...grpc.CallOption) (*RefreshTokenResp, error) {
+func (c *shieldRpcServiceClient) RefreshToken(ctx context.Context, in *RefreshTokenParams, opts ...grpc.CallOption) (*RefreshTokenResp, error) {
 	out := new(RefreshTokenResp)
-	err := c.cc.Invoke(ctx, ShieldService_RefreshToken_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ShieldRpcService_RefreshToken_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ShieldServiceServer is the server API for ShieldService service.
-// All implementations must embed UnimplementedShieldServiceServer
+// ShieldRpcServiceServer is the server API for ShieldRpcService service.
+// All implementations must embed UnimplementedShieldRpcServiceServer
 // for forward compatibility
-type ShieldServiceServer interface {
+type ShieldRpcServiceServer interface {
 	// note: ping服务 必要存在
 	Ping(context.Context, *PingParams) (*PingResp, error)
 	// note: 通过API方式登录, 必要存在
 	AuthLoginWithApi(context.Context, *AuthApiParams) (*AuthApiResp, error)
 	// note: 刷token, 必要存在
 	RefreshToken(context.Context, *RefreshTokenParams) (*RefreshTokenResp, error)
-	mustEmbedUnimplementedShieldServiceServer()
+	mustEmbedUnimplementedShieldRpcServiceServer()
 }
 
-// UnimplementedShieldServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedShieldServiceServer struct {
+// UnimplementedShieldRpcServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedShieldRpcServiceServer struct {
 }
 
-func (UnimplementedShieldServiceServer) Ping(context.Context, *PingParams) (*PingResp, error) {
+func (UnimplementedShieldRpcServiceServer) Ping(context.Context, *PingParams) (*PingResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
 }
-func (UnimplementedShieldServiceServer) AuthLoginWithApi(context.Context, *AuthApiParams) (*AuthApiResp, error) {
+func (UnimplementedShieldRpcServiceServer) AuthLoginWithApi(context.Context, *AuthApiParams) (*AuthApiResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AuthLoginWithApi not implemented")
 }
-func (UnimplementedShieldServiceServer) RefreshToken(context.Context, *RefreshTokenParams) (*RefreshTokenResp, error) {
+func (UnimplementedShieldRpcServiceServer) RefreshToken(context.Context, *RefreshTokenParams) (*RefreshTokenResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
 }
-func (UnimplementedShieldServiceServer) mustEmbedUnimplementedShieldServiceServer() {}
+func (UnimplementedShieldRpcServiceServer) mustEmbedUnimplementedShieldRpcServiceServer() {}
 
-// UnsafeShieldServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ShieldServiceServer will
-// types in compilation errs.
-type UnsafeShieldServiceServer interface {
-	mustEmbedUnimplementedShieldServiceServer()
+// UnsafeShieldRpcServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ShieldRpcServiceServer will
+// result in compilation errors.
+type UnsafeShieldRpcServiceServer interface {
+	mustEmbedUnimplementedShieldRpcServiceServer()
 }
 
-func RegisterShieldServiceServer(s grpc.ServiceRegistrar, srv ShieldServiceServer) {
-	s.RegisterService(&ShieldService_ServiceDesc, srv)
+func RegisterShieldRpcServiceServer(s grpc.ServiceRegistrar, srv ShieldRpcServiceServer) {
+	s.RegisterService(&ShieldRpcService_ServiceDesc, srv)
 }
 
-func _ShieldService_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ShieldRpcService_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PingParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShieldServiceServer).Ping(ctx, in)
+		return srv.(ShieldRpcServiceServer).Ping(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ShieldService_Ping_FullMethodName,
+		FullMethod: ShieldRpcService_Ping_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShieldServiceServer).Ping(ctx, req.(*PingParams))
+		return srv.(ShieldRpcServiceServer).Ping(ctx, req.(*PingParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShieldService_AuthLoginWithApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ShieldRpcService_AuthLoginWithApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthApiParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShieldServiceServer).AuthLoginWithApi(ctx, in)
+		return srv.(ShieldRpcServiceServer).AuthLoginWithApi(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ShieldService_AuthLoginWithApi_FullMethodName,
+		FullMethod: ShieldRpcService_AuthLoginWithApi_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShieldServiceServer).AuthLoginWithApi(ctx, req.(*AuthApiParams))
+		return srv.(ShieldRpcServiceServer).AuthLoginWithApi(ctx, req.(*AuthApiParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShieldService_RefreshToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ShieldRpcService_RefreshToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RefreshTokenParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShieldServiceServer).RefreshToken(ctx, in)
+		return srv.(ShieldRpcServiceServer).RefreshToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ShieldService_RefreshToken_FullMethodName,
+		FullMethod: ShieldRpcService_RefreshToken_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShieldServiceServer).RefreshToken(ctx, req.(*RefreshTokenParams))
+		return srv.(ShieldRpcServiceServer).RefreshToken(ctx, req.(*RefreshTokenParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ShieldService_ServiceDesc is the grpc.ServiceDesc for ShieldService service.
+// ShieldRpcService_ServiceDesc is the grpc.ServiceDesc for ShieldRpcService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ShieldService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "shield.ShieldService",
-	HandlerType: (*ShieldServiceServer)(nil),
+var ShieldRpcService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "shield.ShieldRpcService",
+	HandlerType: (*ShieldRpcServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Ping",
-			Handler:    _ShieldService_Ping_Handler,
+			Handler:    _ShieldRpcService_Ping_Handler,
 		},
 		{
 			MethodName: "AuthLoginWithApi",
-			Handler:    _ShieldService_AuthLoginWithApi_Handler,
+			Handler:    _ShieldRpcService_AuthLoginWithApi_Handler,
 		},
 		{
 			MethodName: "RefreshToken",
-			Handler:    _ShieldService_RefreshToken_Handler,
+			Handler:    _ShieldRpcService_RefreshToken_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

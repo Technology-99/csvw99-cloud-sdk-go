@@ -31,15 +31,11 @@ type Sdk struct {
 	Deadline            int64
 	Context             context.Context
 	Auth                *Auth
-	Article             *Article
-	SubTenant           *SubTenant
 	CloudC              *CloudC
-	Wechat              *Wechat
-	Label               *Label
+	ThirdParty          *ThirdParty
 	Sls                 *Sls
-	Minisite            *Minisite
-	Douyin              *Douyin
 	Mix                 *Mix
+	H5                  *H5
 }
 
 func NewSdk() *Sdk {

@@ -18,7 +18,7 @@ func main() {
 
 	logx.Infof("打印sdk版本号: %s", s.GetVersion())
 
-	result, err := s.MixCheckStatus().MixSendSms("default", "13331909118", "123456")
+	result, err := s.MixCheckStatus().MixSendSms("default", "13986537164", "520")
 	if err != nil {
 		panic(err)
 	}

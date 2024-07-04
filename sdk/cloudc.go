@@ -7,7 +7,7 @@ import (
 )
 
 type CloudC struct {
-	cloudc.CloudCServiceClient
+	cloudc.CloudCRpcServiceClient
 	Num    int64
 	Status int
 	Retry  int
@@ -19,11 +19,11 @@ func NewCloudC(RpcClientConf *zrpc.RpcClientConf) *CloudC {
 			"localhost:8080",
 		}
 	}
-	client := cloudc.NewCloudCServiceClient(zrpc.MustNewClient(*RpcClientConf).Conn())
+	client := cloudc.NewCloudCRpcServiceClient(zrpc.MustNewClient(*RpcClientConf).Conn())
 
 	return &CloudC{
-		CloudCServiceClient: client,
-		Num:                 1,
+		CloudCRpcServiceClient: client,
+		Num:                    1,
 	}
 }
 

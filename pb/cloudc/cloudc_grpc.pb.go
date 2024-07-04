@@ -19,36 +19,36 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CloudCService_SlsConfigSet_FullMethodName        = "/cloudc.CloudCService/SlsConfigSet"
-	CloudCService_SlsConfigGet_FullMethodName        = "/cloudc.CloudCService/SlsConfigGet"
-	CloudCService_SlsConfigGetAll_FullMethodName     = "/cloudc.CloudCService/SlsConfigGetAll"
-	CloudCService_SystemConfigSet_FullMethodName     = "/cloudc.CloudCService/SystemConfigSet"
-	CloudCService_SystemConfigGet_FullMethodName     = "/cloudc.CloudCService/SystemConfigGet"
-	CloudCService_SystemConfigGetAll_FullMethodName  = "/cloudc.CloudCService/SystemConfigGetAll"
-	CloudCService_CaptchaConfigSet_FullMethodName    = "/cloudc.CloudCService/CaptchaConfigSet"
-	CloudCService_CaptchaConfigGet_FullMethodName    = "/cloudc.CloudCService/CaptchaConfigGet"
-	CloudCService_CaptchaConfigGetAll_FullMethodName = "/cloudc.CloudCService/CaptchaConfigGetAll"
-	CloudCService_DouyinConfigSet_FullMethodName     = "/cloudc.CloudCService/DouyinConfigSet"
-	CloudCService_DouyinConfigGet_FullMethodName     = "/cloudc.CloudCService/DouyinConfigGet"
-	CloudCService_DouyinConfigGetAll_FullMethodName  = "/cloudc.CloudCService/DouyinConfigGetAll"
-	CloudCService_WechatConfigSet_FullMethodName     = "/cloudc.CloudCService/WechatConfigSet"
-	CloudCService_WechatConfigGet_FullMethodName     = "/cloudc.CloudCService/WechatConfigGet"
-	CloudCService_WechatConfigGetAll_FullMethodName  = "/cloudc.CloudCService/WechatConfigGetAll"
-	CloudCService_SmsConfigSet_FullMethodName        = "/cloudc.CloudCService/SmsConfigSet"
-	CloudCService_SmsConfigGet_FullMethodName        = "/cloudc.CloudCService/SmsConfigGet"
-	CloudCService_SmsConfigGetAll_FullMethodName     = "/cloudc.CloudCService/SmsConfigGetAll"
-	CloudCService_EmsConfigSet_FullMethodName        = "/cloudc.CloudCService/EmsConfigSet"
-	CloudCService_EmsConfigGet_FullMethodName        = "/cloudc.CloudCService/EmsConfigGet"
-	CloudCService_EmsConfigGetAll_FullMethodName     = "/cloudc.CloudCService/EmsConfigGetAll"
-	CloudCService_OssConfigSet_FullMethodName        = "/cloudc.CloudCService/OssConfigSet"
-	CloudCService_OssConfigGet_FullMethodName        = "/cloudc.CloudCService/OssConfigGet"
-	CloudCService_OssConfigGetAll_FullMethodName     = "/cloudc.CloudCService/OssConfigGetAll"
+	CloudCRpcService_SlsConfigSet_FullMethodName        = "/cloudc.CloudCRpcService/SlsConfigSet"
+	CloudCRpcService_SlsConfigGet_FullMethodName        = "/cloudc.CloudCRpcService/SlsConfigGet"
+	CloudCRpcService_SlsConfigGetAll_FullMethodName     = "/cloudc.CloudCRpcService/SlsConfigGetAll"
+	CloudCRpcService_SystemConfigSet_FullMethodName     = "/cloudc.CloudCRpcService/SystemConfigSet"
+	CloudCRpcService_SystemConfigGet_FullMethodName     = "/cloudc.CloudCRpcService/SystemConfigGet"
+	CloudCRpcService_SystemConfigGetAll_FullMethodName  = "/cloudc.CloudCRpcService/SystemConfigGetAll"
+	CloudCRpcService_CaptchaConfigSet_FullMethodName    = "/cloudc.CloudCRpcService/CaptchaConfigSet"
+	CloudCRpcService_CaptchaConfigGet_FullMethodName    = "/cloudc.CloudCRpcService/CaptchaConfigGet"
+	CloudCRpcService_CaptchaConfigGetAll_FullMethodName = "/cloudc.CloudCRpcService/CaptchaConfigGetAll"
+	CloudCRpcService_DouyinConfigSet_FullMethodName     = "/cloudc.CloudCRpcService/DouyinConfigSet"
+	CloudCRpcService_DouyinConfigGet_FullMethodName     = "/cloudc.CloudCRpcService/DouyinConfigGet"
+	CloudCRpcService_DouyinConfigGetAll_FullMethodName  = "/cloudc.CloudCRpcService/DouyinConfigGetAll"
+	CloudCRpcService_WechatConfigSet_FullMethodName     = "/cloudc.CloudCRpcService/WechatConfigSet"
+	CloudCRpcService_WechatConfigGet_FullMethodName     = "/cloudc.CloudCRpcService/WechatConfigGet"
+	CloudCRpcService_WechatConfigGetAll_FullMethodName  = "/cloudc.CloudCRpcService/WechatConfigGetAll"
+	CloudCRpcService_SmsConfigSet_FullMethodName        = "/cloudc.CloudCRpcService/SmsConfigSet"
+	CloudCRpcService_SmsConfigGet_FullMethodName        = "/cloudc.CloudCRpcService/SmsConfigGet"
+	CloudCRpcService_SmsConfigGetAll_FullMethodName     = "/cloudc.CloudCRpcService/SmsConfigGetAll"
+	CloudCRpcService_EmsConfigSet_FullMethodName        = "/cloudc.CloudCRpcService/EmsConfigSet"
+	CloudCRpcService_EmsConfigGet_FullMethodName        = "/cloudc.CloudCRpcService/EmsConfigGet"
+	CloudCRpcService_EmsConfigGetAll_FullMethodName     = "/cloudc.CloudCRpcService/EmsConfigGetAll"
+	CloudCRpcService_OssConfigSet_FullMethodName        = "/cloudc.CloudCRpcService/OssConfigSet"
+	CloudCRpcService_OssConfigGet_FullMethodName        = "/cloudc.CloudCRpcService/OssConfigGet"
+	CloudCRpcService_OssConfigGetAll_FullMethodName     = "/cloudc.CloudCRpcService/OssConfigGetAll"
 )
 
-// CloudCServiceClient is the client API for CloudCService service.
+// CloudCRpcServiceClient is the client API for CloudCRpcService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type CloudCServiceClient interface {
+type CloudCRpcServiceClient interface {
 	// note: 服务器系统配置
 	SlsConfigSet(ctx context.Context, in *SlsConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error)
 	SlsConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*SlsConfigGetResp, error)
@@ -84,234 +84,234 @@ type CloudCServiceClient interface {
 	OssConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*OssConfigGetAllResp, error)
 }
 
-type cloudCServiceClient struct {
+type cloudCRpcServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewCloudCServiceClient(cc grpc.ClientConnInterface) CloudCServiceClient {
-	return &cloudCServiceClient{cc}
+func NewCloudCRpcServiceClient(cc grpc.ClientConnInterface) CloudCRpcServiceClient {
+	return &cloudCRpcServiceClient{cc}
 }
 
-func (c *cloudCServiceClient) SlsConfigSet(ctx context.Context, in *SlsConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
+func (c *cloudCRpcServiceClient) SlsConfigSet(ctx context.Context, in *SlsConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
 	out := new(ConfigResp)
-	err := c.cc.Invoke(ctx, CloudCService_SlsConfigSet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SlsConfigSet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) SlsConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*SlsConfigGetResp, error) {
+func (c *cloudCRpcServiceClient) SlsConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*SlsConfigGetResp, error) {
 	out := new(SlsConfigGetResp)
-	err := c.cc.Invoke(ctx, CloudCService_SlsConfigGet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SlsConfigGet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) SlsConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*SlsConfigGetAllResp, error) {
+func (c *cloudCRpcServiceClient) SlsConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*SlsConfigGetAllResp, error) {
 	out := new(SlsConfigGetAllResp)
-	err := c.cc.Invoke(ctx, CloudCService_SlsConfigGetAll_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SlsConfigGetAll_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) SystemConfigSet(ctx context.Context, in *SystemConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
+func (c *cloudCRpcServiceClient) SystemConfigSet(ctx context.Context, in *SystemConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
 	out := new(ConfigResp)
-	err := c.cc.Invoke(ctx, CloudCService_SystemConfigSet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SystemConfigSet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) SystemConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*SystemConfigGetResp, error) {
+func (c *cloudCRpcServiceClient) SystemConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*SystemConfigGetResp, error) {
 	out := new(SystemConfigGetResp)
-	err := c.cc.Invoke(ctx, CloudCService_SystemConfigGet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SystemConfigGet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) SystemConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*SystemConfigGetAllResp, error) {
+func (c *cloudCRpcServiceClient) SystemConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*SystemConfigGetAllResp, error) {
 	out := new(SystemConfigGetAllResp)
-	err := c.cc.Invoke(ctx, CloudCService_SystemConfigGetAll_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SystemConfigGetAll_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) CaptchaConfigSet(ctx context.Context, in *CaptchaConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
+func (c *cloudCRpcServiceClient) CaptchaConfigSet(ctx context.Context, in *CaptchaConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
 	out := new(ConfigResp)
-	err := c.cc.Invoke(ctx, CloudCService_CaptchaConfigSet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_CaptchaConfigSet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) CaptchaConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*CaptchaConfigGetResp, error) {
+func (c *cloudCRpcServiceClient) CaptchaConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*CaptchaConfigGetResp, error) {
 	out := new(CaptchaConfigGetResp)
-	err := c.cc.Invoke(ctx, CloudCService_CaptchaConfigGet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_CaptchaConfigGet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) CaptchaConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*CaptchaConfigGetAllResp, error) {
+func (c *cloudCRpcServiceClient) CaptchaConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*CaptchaConfigGetAllResp, error) {
 	out := new(CaptchaConfigGetAllResp)
-	err := c.cc.Invoke(ctx, CloudCService_CaptchaConfigGetAll_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_CaptchaConfigGetAll_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) DouyinConfigSet(ctx context.Context, in *DouyinConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
+func (c *cloudCRpcServiceClient) DouyinConfigSet(ctx context.Context, in *DouyinConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
 	out := new(ConfigResp)
-	err := c.cc.Invoke(ctx, CloudCService_DouyinConfigSet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_DouyinConfigSet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) DouyinConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*DouyinConfigGetResp, error) {
+func (c *cloudCRpcServiceClient) DouyinConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*DouyinConfigGetResp, error) {
 	out := new(DouyinConfigGetResp)
-	err := c.cc.Invoke(ctx, CloudCService_DouyinConfigGet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_DouyinConfigGet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) DouyinConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*DouyinConfigGetAllResp, error) {
+func (c *cloudCRpcServiceClient) DouyinConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*DouyinConfigGetAllResp, error) {
 	out := new(DouyinConfigGetAllResp)
-	err := c.cc.Invoke(ctx, CloudCService_DouyinConfigGetAll_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_DouyinConfigGetAll_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) WechatConfigSet(ctx context.Context, in *WechatConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
+func (c *cloudCRpcServiceClient) WechatConfigSet(ctx context.Context, in *WechatConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
 	out := new(ConfigResp)
-	err := c.cc.Invoke(ctx, CloudCService_WechatConfigSet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_WechatConfigSet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) WechatConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*WechatConfigGetResp, error) {
+func (c *cloudCRpcServiceClient) WechatConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*WechatConfigGetResp, error) {
 	out := new(WechatConfigGetResp)
-	err := c.cc.Invoke(ctx, CloudCService_WechatConfigGet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_WechatConfigGet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) WechatConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*WechatConfigGetAllResp, error) {
+func (c *cloudCRpcServiceClient) WechatConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*WechatConfigGetAllResp, error) {
 	out := new(WechatConfigGetAllResp)
-	err := c.cc.Invoke(ctx, CloudCService_WechatConfigGetAll_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_WechatConfigGetAll_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) SmsConfigSet(ctx context.Context, in *SmsConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
+func (c *cloudCRpcServiceClient) SmsConfigSet(ctx context.Context, in *SmsConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
 	out := new(ConfigResp)
-	err := c.cc.Invoke(ctx, CloudCService_SmsConfigSet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SmsConfigSet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) SmsConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*SmsConfigGetResp, error) {
+func (c *cloudCRpcServiceClient) SmsConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*SmsConfigGetResp, error) {
 	out := new(SmsConfigGetResp)
-	err := c.cc.Invoke(ctx, CloudCService_SmsConfigGet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SmsConfigGet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) SmsConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*SmsConfigGetAllResp, error) {
+func (c *cloudCRpcServiceClient) SmsConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*SmsConfigGetAllResp, error) {
 	out := new(SmsConfigGetAllResp)
-	err := c.cc.Invoke(ctx, CloudCService_SmsConfigGetAll_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_SmsConfigGetAll_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) EmsConfigSet(ctx context.Context, in *EmsConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
+func (c *cloudCRpcServiceClient) EmsConfigSet(ctx context.Context, in *EmsConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
 	out := new(ConfigResp)
-	err := c.cc.Invoke(ctx, CloudCService_EmsConfigSet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_EmsConfigSet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) EmsConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*EmsConfigGetResp, error) {
+func (c *cloudCRpcServiceClient) EmsConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*EmsConfigGetResp, error) {
 	out := new(EmsConfigGetResp)
-	err := c.cc.Invoke(ctx, CloudCService_EmsConfigGet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_EmsConfigGet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) EmsConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*EmsConfigGetAllResp, error) {
+func (c *cloudCRpcServiceClient) EmsConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*EmsConfigGetAllResp, error) {
 	out := new(EmsConfigGetAllResp)
-	err := c.cc.Invoke(ctx, CloudCService_EmsConfigGetAll_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_EmsConfigGetAll_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) OssConfigSet(ctx context.Context, in *OssConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
+func (c *cloudCRpcServiceClient) OssConfigSet(ctx context.Context, in *OssConfigSetParams, opts ...grpc.CallOption) (*ConfigResp, error) {
 	out := new(ConfigResp)
-	err := c.cc.Invoke(ctx, CloudCService_OssConfigSet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_OssConfigSet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) OssConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*OssConfigGetResp, error) {
+func (c *cloudCRpcServiceClient) OssConfigGet(ctx context.Context, in *ConfigGetParams, opts ...grpc.CallOption) (*OssConfigGetResp, error) {
 	out := new(OssConfigGetResp)
-	err := c.cc.Invoke(ctx, CloudCService_OssConfigGet_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_OssConfigGet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *cloudCServiceClient) OssConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*OssConfigGetAllResp, error) {
+func (c *cloudCRpcServiceClient) OssConfigGetAll(ctx context.Context, in *ConfigGetAllParams, opts ...grpc.CallOption) (*OssConfigGetAllResp, error) {
 	out := new(OssConfigGetAllResp)
-	err := c.cc.Invoke(ctx, CloudCService_OssConfigGetAll_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, CloudCRpcService_OssConfigGetAll_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// CloudCServiceServer is the server API for CloudCService service.
-// All implementations must embed UnimplementedCloudCServiceServer
+// CloudCRpcServiceServer is the server API for CloudCRpcService service.
+// All implementations must embed UnimplementedCloudCRpcServiceServer
 // for forward compatibility
-type CloudCServiceServer interface {
+type CloudCRpcServiceServer interface {
 	// note: 服务器系统配置
 	SlsConfigSet(context.Context, *SlsConfigSetParams) (*ConfigResp, error)
 	SlsConfigGet(context.Context, *ConfigGetParams) (*SlsConfigGetResp, error)
@@ -345,632 +345,632 @@ type CloudCServiceServer interface {
 	OssConfigSet(context.Context, *OssConfigSetParams) (*ConfigResp, error)
 	OssConfigGet(context.Context, *ConfigGetParams) (*OssConfigGetResp, error)
 	OssConfigGetAll(context.Context, *ConfigGetAllParams) (*OssConfigGetAllResp, error)
-	mustEmbedUnimplementedCloudCServiceServer()
+	mustEmbedUnimplementedCloudCRpcServiceServer()
 }
 
-// UnimplementedCloudCServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedCloudCServiceServer struct {
+// UnimplementedCloudCRpcServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedCloudCRpcServiceServer struct {
 }
 
-func (UnimplementedCloudCServiceServer) SlsConfigSet(context.Context, *SlsConfigSetParams) (*ConfigResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SlsConfigSet(context.Context, *SlsConfigSetParams) (*ConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SlsConfigSet not implemented")
 }
-func (UnimplementedCloudCServiceServer) SlsConfigGet(context.Context, *ConfigGetParams) (*SlsConfigGetResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SlsConfigGet(context.Context, *ConfigGetParams) (*SlsConfigGetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SlsConfigGet not implemented")
 }
-func (UnimplementedCloudCServiceServer) SlsConfigGetAll(context.Context, *ConfigGetAllParams) (*SlsConfigGetAllResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SlsConfigGetAll(context.Context, *ConfigGetAllParams) (*SlsConfigGetAllResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SlsConfigGetAll not implemented")
 }
-func (UnimplementedCloudCServiceServer) SystemConfigSet(context.Context, *SystemConfigSetParams) (*ConfigResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SystemConfigSet(context.Context, *SystemConfigSetParams) (*ConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SystemConfigSet not implemented")
 }
-func (UnimplementedCloudCServiceServer) SystemConfigGet(context.Context, *ConfigGetParams) (*SystemConfigGetResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SystemConfigGet(context.Context, *ConfigGetParams) (*SystemConfigGetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SystemConfigGet not implemented")
 }
-func (UnimplementedCloudCServiceServer) SystemConfigGetAll(context.Context, *ConfigGetAllParams) (*SystemConfigGetAllResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SystemConfigGetAll(context.Context, *ConfigGetAllParams) (*SystemConfigGetAllResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SystemConfigGetAll not implemented")
 }
-func (UnimplementedCloudCServiceServer) CaptchaConfigSet(context.Context, *CaptchaConfigSetParams) (*ConfigResp, error) {
+func (UnimplementedCloudCRpcServiceServer) CaptchaConfigSet(context.Context, *CaptchaConfigSetParams) (*ConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CaptchaConfigSet not implemented")
 }
-func (UnimplementedCloudCServiceServer) CaptchaConfigGet(context.Context, *ConfigGetParams) (*CaptchaConfigGetResp, error) {
+func (UnimplementedCloudCRpcServiceServer) CaptchaConfigGet(context.Context, *ConfigGetParams) (*CaptchaConfigGetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CaptchaConfigGet not implemented")
 }
-func (UnimplementedCloudCServiceServer) CaptchaConfigGetAll(context.Context, *ConfigGetAllParams) (*CaptchaConfigGetAllResp, error) {
+func (UnimplementedCloudCRpcServiceServer) CaptchaConfigGetAll(context.Context, *ConfigGetAllParams) (*CaptchaConfigGetAllResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CaptchaConfigGetAll not implemented")
 }
-func (UnimplementedCloudCServiceServer) DouyinConfigSet(context.Context, *DouyinConfigSetParams) (*ConfigResp, error) {
+func (UnimplementedCloudCRpcServiceServer) DouyinConfigSet(context.Context, *DouyinConfigSetParams) (*ConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DouyinConfigSet not implemented")
 }
-func (UnimplementedCloudCServiceServer) DouyinConfigGet(context.Context, *ConfigGetParams) (*DouyinConfigGetResp, error) {
+func (UnimplementedCloudCRpcServiceServer) DouyinConfigGet(context.Context, *ConfigGetParams) (*DouyinConfigGetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DouyinConfigGet not implemented")
 }
-func (UnimplementedCloudCServiceServer) DouyinConfigGetAll(context.Context, *ConfigGetAllParams) (*DouyinConfigGetAllResp, error) {
+func (UnimplementedCloudCRpcServiceServer) DouyinConfigGetAll(context.Context, *ConfigGetAllParams) (*DouyinConfigGetAllResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DouyinConfigGetAll not implemented")
 }
-func (UnimplementedCloudCServiceServer) WechatConfigSet(context.Context, *WechatConfigSetParams) (*ConfigResp, error) {
+func (UnimplementedCloudCRpcServiceServer) WechatConfigSet(context.Context, *WechatConfigSetParams) (*ConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WechatConfigSet not implemented")
 }
-func (UnimplementedCloudCServiceServer) WechatConfigGet(context.Context, *ConfigGetParams) (*WechatConfigGetResp, error) {
+func (UnimplementedCloudCRpcServiceServer) WechatConfigGet(context.Context, *ConfigGetParams) (*WechatConfigGetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WechatConfigGet not implemented")
 }
-func (UnimplementedCloudCServiceServer) WechatConfigGetAll(context.Context, *ConfigGetAllParams) (*WechatConfigGetAllResp, error) {
+func (UnimplementedCloudCRpcServiceServer) WechatConfigGetAll(context.Context, *ConfigGetAllParams) (*WechatConfigGetAllResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WechatConfigGetAll not implemented")
 }
-func (UnimplementedCloudCServiceServer) SmsConfigSet(context.Context, *SmsConfigSetParams) (*ConfigResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SmsConfigSet(context.Context, *SmsConfigSetParams) (*ConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SmsConfigSet not implemented")
 }
-func (UnimplementedCloudCServiceServer) SmsConfigGet(context.Context, *ConfigGetParams) (*SmsConfigGetResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SmsConfigGet(context.Context, *ConfigGetParams) (*SmsConfigGetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SmsConfigGet not implemented")
 }
-func (UnimplementedCloudCServiceServer) SmsConfigGetAll(context.Context, *ConfigGetAllParams) (*SmsConfigGetAllResp, error) {
+func (UnimplementedCloudCRpcServiceServer) SmsConfigGetAll(context.Context, *ConfigGetAllParams) (*SmsConfigGetAllResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SmsConfigGetAll not implemented")
 }
-func (UnimplementedCloudCServiceServer) EmsConfigSet(context.Context, *EmsConfigSetParams) (*ConfigResp, error) {
+func (UnimplementedCloudCRpcServiceServer) EmsConfigSet(context.Context, *EmsConfigSetParams) (*ConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EmsConfigSet not implemented")
 }
-func (UnimplementedCloudCServiceServer) EmsConfigGet(context.Context, *ConfigGetParams) (*EmsConfigGetResp, error) {
+func (UnimplementedCloudCRpcServiceServer) EmsConfigGet(context.Context, *ConfigGetParams) (*EmsConfigGetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EmsConfigGet not implemented")
 }
-func (UnimplementedCloudCServiceServer) EmsConfigGetAll(context.Context, *ConfigGetAllParams) (*EmsConfigGetAllResp, error) {
+func (UnimplementedCloudCRpcServiceServer) EmsConfigGetAll(context.Context, *ConfigGetAllParams) (*EmsConfigGetAllResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EmsConfigGetAll not implemented")
 }
-func (UnimplementedCloudCServiceServer) OssConfigSet(context.Context, *OssConfigSetParams) (*ConfigResp, error) {
+func (UnimplementedCloudCRpcServiceServer) OssConfigSet(context.Context, *OssConfigSetParams) (*ConfigResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OssConfigSet not implemented")
 }
-func (UnimplementedCloudCServiceServer) OssConfigGet(context.Context, *ConfigGetParams) (*OssConfigGetResp, error) {
+func (UnimplementedCloudCRpcServiceServer) OssConfigGet(context.Context, *ConfigGetParams) (*OssConfigGetResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OssConfigGet not implemented")
 }
-func (UnimplementedCloudCServiceServer) OssConfigGetAll(context.Context, *ConfigGetAllParams) (*OssConfigGetAllResp, error) {
+func (UnimplementedCloudCRpcServiceServer) OssConfigGetAll(context.Context, *ConfigGetAllParams) (*OssConfigGetAllResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OssConfigGetAll not implemented")
 }
-func (UnimplementedCloudCServiceServer) mustEmbedUnimplementedCloudCServiceServer() {}
+func (UnimplementedCloudCRpcServiceServer) mustEmbedUnimplementedCloudCRpcServiceServer() {}
 
-// UnsafeCloudCServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to CloudCServiceServer will
+// UnsafeCloudCRpcServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to CloudCRpcServiceServer will
 // result in compilation errors.
-type UnsafeCloudCServiceServer interface {
-	mustEmbedUnimplementedCloudCServiceServer()
+type UnsafeCloudCRpcServiceServer interface {
+	mustEmbedUnimplementedCloudCRpcServiceServer()
 }
 
-func RegisterCloudCServiceServer(s grpc.ServiceRegistrar, srv CloudCServiceServer) {
-	s.RegisterService(&CloudCService_ServiceDesc, srv)
+func RegisterCloudCRpcServiceServer(s grpc.ServiceRegistrar, srv CloudCRpcServiceServer) {
+	s.RegisterService(&CloudCRpcService_ServiceDesc, srv)
 }
 
-func _CloudCService_SlsConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SlsConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SlsConfigSetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SlsConfigSet(ctx, in)
+		return srv.(CloudCRpcServiceServer).SlsConfigSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SlsConfigSet_FullMethodName,
+		FullMethod: CloudCRpcService_SlsConfigSet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SlsConfigSet(ctx, req.(*SlsConfigSetParams))
+		return srv.(CloudCRpcServiceServer).SlsConfigSet(ctx, req.(*SlsConfigSetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_SlsConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SlsConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SlsConfigGet(ctx, in)
+		return srv.(CloudCRpcServiceServer).SlsConfigGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SlsConfigGet_FullMethodName,
+		FullMethod: CloudCRpcService_SlsConfigGet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SlsConfigGet(ctx, req.(*ConfigGetParams))
+		return srv.(CloudCRpcServiceServer).SlsConfigGet(ctx, req.(*ConfigGetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_SlsConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SlsConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetAllParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SlsConfigGetAll(ctx, in)
+		return srv.(CloudCRpcServiceServer).SlsConfigGetAll(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SlsConfigGetAll_FullMethodName,
+		FullMethod: CloudCRpcService_SlsConfigGetAll_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SlsConfigGetAll(ctx, req.(*ConfigGetAllParams))
+		return srv.(CloudCRpcServiceServer).SlsConfigGetAll(ctx, req.(*ConfigGetAllParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_SystemConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SystemConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SystemConfigSetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SystemConfigSet(ctx, in)
+		return srv.(CloudCRpcServiceServer).SystemConfigSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SystemConfigSet_FullMethodName,
+		FullMethod: CloudCRpcService_SystemConfigSet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SystemConfigSet(ctx, req.(*SystemConfigSetParams))
+		return srv.(CloudCRpcServiceServer).SystemConfigSet(ctx, req.(*SystemConfigSetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_SystemConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SystemConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SystemConfigGet(ctx, in)
+		return srv.(CloudCRpcServiceServer).SystemConfigGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SystemConfigGet_FullMethodName,
+		FullMethod: CloudCRpcService_SystemConfigGet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SystemConfigGet(ctx, req.(*ConfigGetParams))
+		return srv.(CloudCRpcServiceServer).SystemConfigGet(ctx, req.(*ConfigGetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_SystemConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SystemConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetAllParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SystemConfigGetAll(ctx, in)
+		return srv.(CloudCRpcServiceServer).SystemConfigGetAll(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SystemConfigGetAll_FullMethodName,
+		FullMethod: CloudCRpcService_SystemConfigGetAll_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SystemConfigGetAll(ctx, req.(*ConfigGetAllParams))
+		return srv.(CloudCRpcServiceServer).SystemConfigGetAll(ctx, req.(*ConfigGetAllParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_CaptchaConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_CaptchaConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CaptchaConfigSetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).CaptchaConfigSet(ctx, in)
+		return srv.(CloudCRpcServiceServer).CaptchaConfigSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_CaptchaConfigSet_FullMethodName,
+		FullMethod: CloudCRpcService_CaptchaConfigSet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).CaptchaConfigSet(ctx, req.(*CaptchaConfigSetParams))
+		return srv.(CloudCRpcServiceServer).CaptchaConfigSet(ctx, req.(*CaptchaConfigSetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_CaptchaConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_CaptchaConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).CaptchaConfigGet(ctx, in)
+		return srv.(CloudCRpcServiceServer).CaptchaConfigGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_CaptchaConfigGet_FullMethodName,
+		FullMethod: CloudCRpcService_CaptchaConfigGet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).CaptchaConfigGet(ctx, req.(*ConfigGetParams))
+		return srv.(CloudCRpcServiceServer).CaptchaConfigGet(ctx, req.(*ConfigGetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_CaptchaConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_CaptchaConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetAllParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).CaptchaConfigGetAll(ctx, in)
+		return srv.(CloudCRpcServiceServer).CaptchaConfigGetAll(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_CaptchaConfigGetAll_FullMethodName,
+		FullMethod: CloudCRpcService_CaptchaConfigGetAll_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).CaptchaConfigGetAll(ctx, req.(*ConfigGetAllParams))
+		return srv.(CloudCRpcServiceServer).CaptchaConfigGetAll(ctx, req.(*ConfigGetAllParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_DouyinConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_DouyinConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DouyinConfigSetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).DouyinConfigSet(ctx, in)
+		return srv.(CloudCRpcServiceServer).DouyinConfigSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_DouyinConfigSet_FullMethodName,
+		FullMethod: CloudCRpcService_DouyinConfigSet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).DouyinConfigSet(ctx, req.(*DouyinConfigSetParams))
+		return srv.(CloudCRpcServiceServer).DouyinConfigSet(ctx, req.(*DouyinConfigSetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_DouyinConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_DouyinConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).DouyinConfigGet(ctx, in)
+		return srv.(CloudCRpcServiceServer).DouyinConfigGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_DouyinConfigGet_FullMethodName,
+		FullMethod: CloudCRpcService_DouyinConfigGet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).DouyinConfigGet(ctx, req.(*ConfigGetParams))
+		return srv.(CloudCRpcServiceServer).DouyinConfigGet(ctx, req.(*ConfigGetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_DouyinConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_DouyinConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetAllParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).DouyinConfigGetAll(ctx, in)
+		return srv.(CloudCRpcServiceServer).DouyinConfigGetAll(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_DouyinConfigGetAll_FullMethodName,
+		FullMethod: CloudCRpcService_DouyinConfigGetAll_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).DouyinConfigGetAll(ctx, req.(*ConfigGetAllParams))
+		return srv.(CloudCRpcServiceServer).DouyinConfigGetAll(ctx, req.(*ConfigGetAllParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_WechatConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_WechatConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(WechatConfigSetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).WechatConfigSet(ctx, in)
+		return srv.(CloudCRpcServiceServer).WechatConfigSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_WechatConfigSet_FullMethodName,
+		FullMethod: CloudCRpcService_WechatConfigSet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).WechatConfigSet(ctx, req.(*WechatConfigSetParams))
+		return srv.(CloudCRpcServiceServer).WechatConfigSet(ctx, req.(*WechatConfigSetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_WechatConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_WechatConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).WechatConfigGet(ctx, in)
+		return srv.(CloudCRpcServiceServer).WechatConfigGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_WechatConfigGet_FullMethodName,
+		FullMethod: CloudCRpcService_WechatConfigGet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).WechatConfigGet(ctx, req.(*ConfigGetParams))
+		return srv.(CloudCRpcServiceServer).WechatConfigGet(ctx, req.(*ConfigGetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_WechatConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_WechatConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetAllParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).WechatConfigGetAll(ctx, in)
+		return srv.(CloudCRpcServiceServer).WechatConfigGetAll(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_WechatConfigGetAll_FullMethodName,
+		FullMethod: CloudCRpcService_WechatConfigGetAll_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).WechatConfigGetAll(ctx, req.(*ConfigGetAllParams))
+		return srv.(CloudCRpcServiceServer).WechatConfigGetAll(ctx, req.(*ConfigGetAllParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_SmsConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SmsConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SmsConfigSetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SmsConfigSet(ctx, in)
+		return srv.(CloudCRpcServiceServer).SmsConfigSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SmsConfigSet_FullMethodName,
+		FullMethod: CloudCRpcService_SmsConfigSet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SmsConfigSet(ctx, req.(*SmsConfigSetParams))
+		return srv.(CloudCRpcServiceServer).SmsConfigSet(ctx, req.(*SmsConfigSetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_SmsConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SmsConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SmsConfigGet(ctx, in)
+		return srv.(CloudCRpcServiceServer).SmsConfigGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SmsConfigGet_FullMethodName,
+		FullMethod: CloudCRpcService_SmsConfigGet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SmsConfigGet(ctx, req.(*ConfigGetParams))
+		return srv.(CloudCRpcServiceServer).SmsConfigGet(ctx, req.(*ConfigGetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_SmsConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_SmsConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetAllParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).SmsConfigGetAll(ctx, in)
+		return srv.(CloudCRpcServiceServer).SmsConfigGetAll(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_SmsConfigGetAll_FullMethodName,
+		FullMethod: CloudCRpcService_SmsConfigGetAll_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).SmsConfigGetAll(ctx, req.(*ConfigGetAllParams))
+		return srv.(CloudCRpcServiceServer).SmsConfigGetAll(ctx, req.(*ConfigGetAllParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_EmsConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_EmsConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(EmsConfigSetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).EmsConfigSet(ctx, in)
+		return srv.(CloudCRpcServiceServer).EmsConfigSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_EmsConfigSet_FullMethodName,
+		FullMethod: CloudCRpcService_EmsConfigSet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).EmsConfigSet(ctx, req.(*EmsConfigSetParams))
+		return srv.(CloudCRpcServiceServer).EmsConfigSet(ctx, req.(*EmsConfigSetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_EmsConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_EmsConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).EmsConfigGet(ctx, in)
+		return srv.(CloudCRpcServiceServer).EmsConfigGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_EmsConfigGet_FullMethodName,
+		FullMethod: CloudCRpcService_EmsConfigGet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).EmsConfigGet(ctx, req.(*ConfigGetParams))
+		return srv.(CloudCRpcServiceServer).EmsConfigGet(ctx, req.(*ConfigGetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_EmsConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_EmsConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetAllParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).EmsConfigGetAll(ctx, in)
+		return srv.(CloudCRpcServiceServer).EmsConfigGetAll(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_EmsConfigGetAll_FullMethodName,
+		FullMethod: CloudCRpcService_EmsConfigGetAll_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).EmsConfigGetAll(ctx, req.(*ConfigGetAllParams))
+		return srv.(CloudCRpcServiceServer).EmsConfigGetAll(ctx, req.(*ConfigGetAllParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_OssConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_OssConfigSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(OssConfigSetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).OssConfigSet(ctx, in)
+		return srv.(CloudCRpcServiceServer).OssConfigSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_OssConfigSet_FullMethodName,
+		FullMethod: CloudCRpcService_OssConfigSet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).OssConfigSet(ctx, req.(*OssConfigSetParams))
+		return srv.(CloudCRpcServiceServer).OssConfigSet(ctx, req.(*OssConfigSetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_OssConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_OssConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).OssConfigGet(ctx, in)
+		return srv.(CloudCRpcServiceServer).OssConfigGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_OssConfigGet_FullMethodName,
+		FullMethod: CloudCRpcService_OssConfigGet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).OssConfigGet(ctx, req.(*ConfigGetParams))
+		return srv.(CloudCRpcServiceServer).OssConfigGet(ctx, req.(*ConfigGetParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CloudCService_OssConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudCRpcService_OssConfigGetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfigGetAllParams)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CloudCServiceServer).OssConfigGetAll(ctx, in)
+		return srv.(CloudCRpcServiceServer).OssConfigGetAll(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CloudCService_OssConfigGetAll_FullMethodName,
+		FullMethod: CloudCRpcService_OssConfigGetAll_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudCServiceServer).OssConfigGetAll(ctx, req.(*ConfigGetAllParams))
+		return srv.(CloudCRpcServiceServer).OssConfigGetAll(ctx, req.(*ConfigGetAllParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// CloudCService_ServiceDesc is the grpc.ServiceDesc for CloudCService service.
+// CloudCRpcService_ServiceDesc is the grpc.ServiceDesc for CloudCRpcService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var CloudCService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "cloudc.CloudCService",
-	HandlerType: (*CloudCServiceServer)(nil),
+var CloudCRpcService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "cloudc.CloudCRpcService",
+	HandlerType: (*CloudCRpcServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SlsConfigSet",
-			Handler:    _CloudCService_SlsConfigSet_Handler,
+			Handler:    _CloudCRpcService_SlsConfigSet_Handler,
 		},
 		{
 			MethodName: "SlsConfigGet",
-			Handler:    _CloudCService_SlsConfigGet_Handler,
+			Handler:    _CloudCRpcService_SlsConfigGet_Handler,
 		},
 		{
 			MethodName: "SlsConfigGetAll",
-			Handler:    _CloudCService_SlsConfigGetAll_Handler,
+			Handler:    _CloudCRpcService_SlsConfigGetAll_Handler,
 		},
 		{
 			MethodName: "SystemConfigSet",
-			Handler:    _CloudCService_SystemConfigSet_Handler,
+			Handler:    _CloudCRpcService_SystemConfigSet_Handler,
 		},
 		{
 			MethodName: "SystemConfigGet",
-			Handler:    _CloudCService_SystemConfigGet_Handler,
+			Handler:    _CloudCRpcService_SystemConfigGet_Handler,
 		},
 		{
 			MethodName: "SystemConfigGetAll",
-			Handler:    _CloudCService_SystemConfigGetAll_Handler,
+			Handler:    _CloudCRpcService_SystemConfigGetAll_Handler,
 		},
 		{
 			MethodName: "CaptchaConfigSet",
-			Handler:    _CloudCService_CaptchaConfigSet_Handler,
+			Handler:    _CloudCRpcService_CaptchaConfigSet_Handler,
 		},
 		{
 			MethodName: "CaptchaConfigGet",
-			Handler:    _CloudCService_CaptchaConfigGet_Handler,
+			Handler:    _CloudCRpcService_CaptchaConfigGet_Handler,
 		},
 		{
 			MethodName: "CaptchaConfigGetAll",
-			Handler:    _CloudCService_CaptchaConfigGetAll_Handler,
+			Handler:    _CloudCRpcService_CaptchaConfigGetAll_Handler,
 		},
 		{
 			MethodName: "DouyinConfigSet",
-			Handler:    _CloudCService_DouyinConfigSet_Handler,
+			Handler:    _CloudCRpcService_DouyinConfigSet_Handler,
 		},
 		{
 			MethodName: "DouyinConfigGet",
-			Handler:    _CloudCService_DouyinConfigGet_Handler,
+			Handler:    _CloudCRpcService_DouyinConfigGet_Handler,
 		},
 		{
 			MethodName: "DouyinConfigGetAll",
-			Handler:    _CloudCService_DouyinConfigGetAll_Handler,
+			Handler:    _CloudCRpcService_DouyinConfigGetAll_Handler,
 		},
 		{
 			MethodName: "WechatConfigSet",
-			Handler:    _CloudCService_WechatConfigSet_Handler,
+			Handler:    _CloudCRpcService_WechatConfigSet_Handler,
 		},
 		{
 			MethodName: "WechatConfigGet",
-			Handler:    _CloudCService_WechatConfigGet_Handler,
+			Handler:    _CloudCRpcService_WechatConfigGet_Handler,
 		},
 		{
 			MethodName: "WechatConfigGetAll",
-			Handler:    _CloudCService_WechatConfigGetAll_Handler,
+			Handler:    _CloudCRpcService_WechatConfigGetAll_Handler,
 		},
 		{
 			MethodName: "SmsConfigSet",
-			Handler:    _CloudCService_SmsConfigSet_Handler,
+			Handler:    _CloudCRpcService_SmsConfigSet_Handler,
 		},
 		{
 			MethodName: "SmsConfigGet",
-			Handler:    _CloudCService_SmsConfigGet_Handler,
+			Handler:    _CloudCRpcService_SmsConfigGet_Handler,
 		},
 		{
 			MethodName: "SmsConfigGetAll",
-			Handler:    _CloudCService_SmsConfigGetAll_Handler,
+			Handler:    _CloudCRpcService_SmsConfigGetAll_Handler,
 		},
 		{
 			MethodName: "EmsConfigSet",
-			Handler:    _CloudCService_EmsConfigSet_Handler,
+			Handler:    _CloudCRpcService_EmsConfigSet_Handler,
 		},
 		{
 			MethodName: "EmsConfigGet",
-			Handler:    _CloudCService_EmsConfigGet_Handler,
+			Handler:    _CloudCRpcService_EmsConfigGet_Handler,
 		},
 		{
 			MethodName: "EmsConfigGetAll",
-			Handler:    _CloudCService_EmsConfigGetAll_Handler,
+			Handler:    _CloudCRpcService_EmsConfigGetAll_Handler,
 		},
 		{
 			MethodName: "OssConfigSet",
-			Handler:    _CloudCService_OssConfigSet_Handler,
+			Handler:    _CloudCRpcService_OssConfigSet_Handler,
 		},
 		{
 			MethodName: "OssConfigGet",
-			Handler:    _CloudCService_OssConfigGet_Handler,
+			Handler:    _CloudCRpcService_OssConfigGet_Handler,
 		},
 		{
 			MethodName: "OssConfigGetAll",
-			Handler:    _CloudCService_OssConfigGetAll_Handler,
+			Handler:    _CloudCRpcService_OssConfigGetAll_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
