@@ -1,6 +1,6 @@
 module github.com/Technology-99/csvw99-cloud-sdk-go
 
-go 1.19
+go 1.22
 
 require (
 	github.com/Technology-99/third_party v0.0.1

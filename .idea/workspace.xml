@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: V4架构">
+      <change afterPath="$PROJECT_DIR$/example/transactions.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pb/transactions/transactions-rpc-service.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pb/transactions/transactions-rpc-service_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/transactions.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/thirdparty/thirdparty.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/thirdparty/thirdparty.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/thirdparty/thirdparty_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/thirdparty/thirdparty_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/thirdparty.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/thirdparty.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/article.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/auth.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/captcha.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/douyin.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/label.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/sub_tenant.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/wechat.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/sdk.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sdk.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +33,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.19.13" />
+  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.22.3" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -50,6 +61,7 @@
   &quot;keyToString&quot;: {
     &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
     &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go.executor&quot;: &quot;Run&quot;,
+    &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1).executor&quot;: &quot;Run&quot;,
     &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -76,7 +88,7 @@
       <recent name="$PROJECT_DIR$/sdk" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go">
+  <component name="RunManager" selected="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)">
     <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="csvw99-cloud-sdk-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -84,6 +96,15 @@
       <package value="github.com/Technology-99/csvw99-cloud-sdk-go" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/easy_example.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="csvw99-cloud-sdk-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Technology-99/csvw99-cloud-sdk-go/example" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/example/transactions.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go/example" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -97,6 +118,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" />
         <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go" />
         <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
       </list>
