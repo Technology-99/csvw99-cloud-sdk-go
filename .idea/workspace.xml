@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 添加交易中心函数">
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 矫正交易中心的代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/transactions.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/transactions.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pb/transactions/transactions-rpc-service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/transactions/transactions-rpc-service.pb.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +164,8 @@
     <MESSAGE value="feat: 添加微信支付，微信关闭订单，微信取消订单" />
     <MESSAGE value="feat: V4架构" />
     <MESSAGE value="feat: 添加交易中心函数" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加交易中心函数" />
+    <MESSAGE value="feat: 矫正交易中心的代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 矫正交易中心的代码" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
