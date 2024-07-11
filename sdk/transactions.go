@@ -87,8 +87,16 @@ func (s *Sdk) TransProductQuery(in *transactions.ProductQueryReq) (*transactions
 	return res, nil
 }
 
-func (s *Sdk) TransProductQueryIds(in *transactions.ProductQueryIdsReq) (*transactions.ProductQueryListResp, error) {
+func (s *Sdk) TransProductQueryIds(in *transactions.ProductQueryIdsReq) (*transactions.ProductQueryIdsResp, error) {
 	res, err := s.Transactions.ProductQueryIds(s.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (s *Sdk) TransProductQueryList(in *transactions.ProductQueryListReq) (*transactions.ProductQueryListResp, error) {
+	res, err := s.Transactions.ProductQueryList(s.SonyCtx(), in)
 	if err != nil {
 		return nil, err
 	}
