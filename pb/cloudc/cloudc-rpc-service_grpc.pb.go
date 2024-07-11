@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.19.4
-// source: cloudc.proto
+// source: cloudc-rpc-service/cloudc-rpc-service.proto
 
 package cloudc
 
@@ -974,5 +974,5 @@ var CloudCRpcService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "cloudc.proto",
+	Metadata: "cloudc-rpc-service/cloudc-rpc-service.proto",
 }

@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: V4架构">
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 添加交易中心函数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/transactions.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/transactions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/transactions.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/transactions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc_grpc.pb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/transactions/transactions-rpc-service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/transactions/transactions-rpc-service.pb.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +50,10 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;Go 构建.go build cloudc.go.executor&quot;: &quot;Run&quot;,
     &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go.executor&quot;: &quot;Run&quot;,
     &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1).executor&quot;: &quot;Run&quot;,
+    &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (2).executor&quot;: &quot;Run&quot;,
     &quot;Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -69,13 +74,23 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pb" />
+      <recent name="$PROJECT_DIR$/example" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/sdk" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)">
+  <component name="RunManager" selected="Go 构建.go build cloudc.go">
+    <configuration name="go build cloudc.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="csvw99-cloud-sdk-go" />
+      <working_directory value="$PROJECT_DIR$/example" />
+      <kind value="FILE" />
+      <package value="github.com/Technology-99/csvw99-cloud-sdk-go/example" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/example/cloudc.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="csvw99-cloud-sdk-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -88,7 +103,7 @@
     <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="csvw99-cloud-sdk-go" />
       <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
+      <kind value="FILE" />
       <package value="github.com/Technology-99/csvw99-cloud-sdk-go/example" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/example/transactions.go" />
@@ -103,8 +118,15 @@
       <filePath value="$PROJECT_DIR$/example/sms.go" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go" />
+      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
+      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" />
+      <item itemvalue="Go 构建.go build cloudc.go" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 构建.go build cloudc.go" />
         <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" />
         <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go" />
         <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
@@ -145,7 +167,8 @@
     <MESSAGE value="feat: ArticleQueryListQueryIds" />
     <MESSAGE value="feat: 添加微信支付，微信关闭订单，微信取消订单" />
     <MESSAGE value="feat: V4架构" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: V4架构" />
+    <MESSAGE value="feat: 添加交易中心函数" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加交易中心函数" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
