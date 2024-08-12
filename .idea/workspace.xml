@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 矫正交易中心的代码">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pb/cloudc/cloudc-rpc-service.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pb/cloudc/cloudc-rpc-service.pb.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,10 +115,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go" />
-      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
-      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" />
       <item itemvalue="Go 构建.go build cloudc.go" />
+      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go" />
+      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" />
+      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
     </list>
     <recent_temporary>
       <list>
