@@ -125,6 +125,23 @@ func (c *Sdk) SlsSendLog(log *sls.Log, sourceIp string) error {
 	return nil
 }
 
+func (c *Sdk) SlsSendLogList(logs []*sls.Log, sourceIp string) error {
+	// note: 读取当前使用配置
+	if c.Sls.UsingConfig == nil {
+		c.Sls.UsingConfig = c.Sls.Configs["default"]
+	}
+	//logx.Infof("打印当前日志push的目的地: 配置key: %s", c.Sls.UsingConfig.Key)
+	//logx.Infof("打印当前日志push的目的地: 配置名字: %s", c.Sls.UsingConfig.Name)
+	//logx.Infof("打印当前日志push的目的地: project: %s", c.Sls.UsingConfig.ProjectName)
+	//logx.Infof("打印当前日志push的目的地: logStoreName: %s", c.Sls.UsingConfig.LogStoreName)
+	//logx.Infof("打印当前日志push的目的地: topic: %s", c.Sls.UsingConfig.Topic)
+	err := c.Sls.Producer.SendLogList(c.Sls.UsingConfig.ProjectName, c.Sls.UsingConfig.LogStoreName, c.Sls.UsingConfig.Topic, sourceIp, logs)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 type TemplateLog struct {
 	AppName     string `json:"app_name"`
 	AppPlatform string `json:"app_platform"`
