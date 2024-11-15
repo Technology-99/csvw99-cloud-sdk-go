@@ -67,3 +67,11 @@ func (s *Sdk) AIotJStyleDeviceHeartOneParse(in *aiot.JStyleDeviceHeartOneParseRe
 	}
 	return res, nil
 }
+
+func (s *Sdk) AIotJStyleDeviceStepParse(in *aiot.JStyleDeviceStepParseReq) (*aiot.JStyleDeviceStepParseResp, error) {
+	res, err := s.AIot.JStyleDeviceStepParse(s.SonyCtx(), in)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
