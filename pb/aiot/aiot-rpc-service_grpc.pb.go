@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	AIotJStyleRpcService_JStyleDeviceHeartOneParse_FullMethodName = "/aiot.AIotJStyleRpcService/JStyleDeviceHeartOneParse"
 	AIotJStyleRpcService_JStyleDeviceHeartParse_FullMethodName    = "/aiot.AIotJStyleRpcService/JStyleDeviceHeartParse"
+	AIotJStyleRpcService_JStyleDeviceStepParse_FullMethodName     = "/aiot.AIotJStyleRpcService/JStyleDeviceStepParse"
 	AIotJStyleRpcService_JStyleDeviceSleepParse_FullMethodName    = "/aiot.AIotJStyleRpcService/JStyleDeviceSleepParse"
 )
 
@@ -31,6 +32,7 @@ type AIotJStyleRpcServiceClient interface {
 	// note: AIot设备管理模块
 	JStyleDeviceHeartOneParse(ctx context.Context, in *JStyleDeviceHeartOneParseReq, opts ...grpc.CallOption) (*JStyleDeviceHeartOneParseResp, error)
 	JStyleDeviceHeartParse(ctx context.Context, in *JStyleDeviceHeartParseReq, opts ...grpc.CallOption) (*JStyleDeviceHeartParseResp, error)
+	JStyleDeviceStepParse(ctx context.Context, in *JStyleDeviceStepParseReq, opts ...grpc.CallOption) (*JStyleDeviceStepParseResp, error)
 	JStyleDeviceSleepParse(ctx context.Context, in *JStyleDeviceSleepParseReq, opts ...grpc.CallOption) (*JStyleDeviceSleepParseResp, error)
 }
 
@@ -60,6 +62,15 @@ func (c *aIotJStyleRpcServiceClient) JStyleDeviceHeartParse(ctx context.Context,
 	return out, nil
 }
 
+func (c *aIotJStyleRpcServiceClient) JStyleDeviceStepParse(ctx context.Context, in *JStyleDeviceStepParseReq, opts ...grpc.CallOption) (*JStyleDeviceStepParseResp, error) {
+	out := new(JStyleDeviceStepParseResp)
+	err := c.cc.Invoke(ctx, AIotJStyleRpcService_JStyleDeviceStepParse_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *aIotJStyleRpcServiceClient) JStyleDeviceSleepParse(ctx context.Context, in *JStyleDeviceSleepParseReq, opts ...grpc.CallOption) (*JStyleDeviceSleepParseResp, error) {
 	out := new(JStyleDeviceSleepParseResp)
 	err := c.cc.Invoke(ctx, AIotJStyleRpcService_JStyleDeviceSleepParse_FullMethodName, in, out, opts...)
@@ -76,6 +87,7 @@ type AIotJStyleRpcServiceServer interface {
 	// note: AIot设备管理模块
 	JStyleDeviceHeartOneParse(context.Context, *JStyleDeviceHeartOneParseReq) (*JStyleDeviceHeartOneParseResp, error)
 	JStyleDeviceHeartParse(context.Context, *JStyleDeviceHeartParseReq) (*JStyleDeviceHeartParseResp, error)
+	JStyleDeviceStepParse(context.Context, *JStyleDeviceStepParseReq) (*JStyleDeviceStepParseResp, error)
 	JStyleDeviceSleepParse(context.Context, *JStyleDeviceSleepParseReq) (*JStyleDeviceSleepParseResp, error)
 	mustEmbedUnimplementedAIotJStyleRpcServiceServer()
 }
@@ -89,6 +101,9 @@ func (UnimplementedAIotJStyleRpcServiceServer) JStyleDeviceHeartOneParse(context
 }
 func (UnimplementedAIotJStyleRpcServiceServer) JStyleDeviceHeartParse(context.Context, *JStyleDeviceHeartParseReq) (*JStyleDeviceHeartParseResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method JStyleDeviceHeartParse not implemented")
+}
+func (UnimplementedAIotJStyleRpcServiceServer) JStyleDeviceStepParse(context.Context, *JStyleDeviceStepParseReq) (*JStyleDeviceStepParseResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method JStyleDeviceStepParse not implemented")
 }
 func (UnimplementedAIotJStyleRpcServiceServer) JStyleDeviceSleepParse(context.Context, *JStyleDeviceSleepParseReq) (*JStyleDeviceSleepParseResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method JStyleDeviceSleepParse not implemented")
@@ -142,6 +157,24 @@ func _AIotJStyleRpcService_JStyleDeviceHeartParse_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AIotJStyleRpcService_JStyleDeviceStepParse_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(JStyleDeviceStepParseReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AIotJStyleRpcServiceServer).JStyleDeviceStepParse(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AIotJStyleRpcService_JStyleDeviceStepParse_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AIotJStyleRpcServiceServer).JStyleDeviceStepParse(ctx, req.(*JStyleDeviceStepParseReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AIotJStyleRpcService_JStyleDeviceSleepParse_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(JStyleDeviceSleepParseReq)
 	if err := dec(in); err != nil {
@@ -174,6 +207,10 @@ var AIotJStyleRpcService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "JStyleDeviceHeartParse",
 			Handler:    _AIotJStyleRpcService_JStyleDeviceHeartParse_Handler,
+		},
+		{
+			MethodName: "JStyleDeviceStepParse",
+			Handler:    _AIotJStyleRpcService_JStyleDeviceStepParse_Handler,
 		},
 		{
 			MethodName: "JStyleDeviceSleepParse",
