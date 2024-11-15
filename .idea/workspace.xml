@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 添加批量推送日志的功能">
-      <change afterPath="$PROJECT_DIR$/pb/aiot/aiot-rpc-service.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pb/aiot/aiot-rpc-service_grpc.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/aiot.go" afterDir="false" />
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 添加aiot服务的sdk">
+      <change afterPath="$PROJECT_DIR$/example/aiot.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/sdk.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sdk.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,14 +168,15 @@
     <MESSAGE value="feat: 矫正交易中心的代码" />
     <MESSAGE value="feat: 添加租户可以查询回调中心生成的回调参数" />
     <MESSAGE value="feat: 添加批量推送日志的功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加批量推送日志的功能" />
+    <MESSAGE value="feat: 添加aiot服务的sdk" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加aiot服务的sdk" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">
     <environment>
       <map>
-        <entry key="ACCESS_KEY_ID" value="od8NORDMU4LqnQiR" />
-        <entry key="ACCESS_KEY_SECRET" value="132939C9B0D4476F25C018350171F4B0981Ce66C" />
+        <entry key="ACCESS_KEY_ID" value="UmUnVe2cx4dcKLpV" />
+        <entry key="ACCESS_KEY_SECRET" value="531A399715F8877061Aef45Bb4Db1Fcf613A58Be" />
         <entry key="ENDPOINT" value="core.csvw88.com:8080" />
         <entry key="GOPROXY" value="goproxy.cn" />
       </map>
