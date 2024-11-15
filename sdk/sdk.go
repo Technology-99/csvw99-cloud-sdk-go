@@ -37,6 +37,7 @@ type Sdk struct {
 	Mix                 *Mix
 	H5                  *H5
 	Transactions        *Transactions
+	AIot                *AIot
 }
 
 func NewSdk() *Sdk {
