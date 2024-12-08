@@ -14,13 +14,8 @@ func main() {
 	AccessKeyId := os.Getenv("ACCESS_KEY_ID")
 	AccessKeySecret := os.Getenv("ACCESS_KEY_SECRET")
 
-	s := sdk.NewSdk().WithConfig(sdk.DefaultConfig(AccessKeyId, AccessKeySecret, []string{Endpoint})).AutoAuth().InitCloudC().InitMix()
+	s := sdk.NewSdk(AccessKeyId, AccessKeySecret, Endpoint).AutoAuth()
 
 	logx.Infof("打印sdk版本号: %s", s.GetVersion())
-
-	result, err := s.MixCheckStatus().MixSendSms("default", "13986537164", "520")
-	if err != nil {
-		panic(err)
-	}
-	logx.Infof("打印一下结果:%+v", result)
+	select {}
 }
