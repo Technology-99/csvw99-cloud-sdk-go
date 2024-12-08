@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 添加aiot服务的sdk">
-      <change afterPath="$PROJECT_DIR$/sdk/req/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/resp/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/types/protocol.go" afterDir="false" />
+    <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 完成V5引擎的自动登录和自动刷新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/easy_example.go" beforeDir="false" afterPath="$PROJECT_DIR$/easy_example.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/aiot.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/cloudc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/h5.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/mix.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/sdk.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sdk.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/sls.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/thirdparty.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/transactions.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/types/status.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/types/status.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +169,8 @@
     <MESSAGE value="feat: 添加租户可以查询回调中心生成的回调参数" />
     <MESSAGE value="feat: 添加批量推送日志的功能" />
     <MESSAGE value="feat: 添加aiot服务的sdk" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加aiot服务的sdk" />
+    <MESSAGE value="feat: 完成V5引擎的自动登录和自动刷新" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 完成V5引擎的自动登录和自动刷新" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="VgoProject">

@@ -314,7 +314,8 @@ func (s *Sdk) AuthRefresh() (*Sdk, error) {
 	} else {
 		// note: refreshToken过期了
 		logx.Errorf("refreshToken 过期了")
-		return s.AuthLogin()
+		s.Status = types.STATUS_NOT_READY
+		return s.AuthHealthZ().AuthLogin()
 	}
 	return s, nil
 }
