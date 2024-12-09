@@ -193,7 +193,7 @@ func (s *Sdk) AuthLogin() (*Sdk, error) {
 		return s, types.ErrNotReady
 	}
 
-	apiUrl := fmt.Sprintf("%s://%s/qiongxiao/v5/apis/api/sign", s.Config.Protocol, s.Config.Endpoint)
+	apiUrl := fmt.Sprintf("%s://%s/qiongxiao/v5/apis/auth/api/sign", s.Config.Protocol, s.Config.Endpoint)
 	reqFn := s.NewRequest(apiUrl, "POST", &req.QxV5ApisApiSignReq{
 		AccessKey:    s.Config.AccessKeyId,
 		AccessSecret: s.Config.AccessKeySecret,
@@ -267,7 +267,7 @@ func (s *Sdk) AuthRefresh() (*Sdk, error) {
 			logx.Infof("accessToken过期了，过期时间为: %s, 但是refreshToken没过期，过期时间为: %s, 当前时间为: %s", time.Unix(s.AccessTokenExpires, 0).Format(time.DateTime), time.Unix(s.RefreshTokenExpires, 0).Format(time.DateTime), nowTime.Format(time.DateTime))
 		}
 		// note: refreshToken没过期，但是accessToken过期了
-		apiUrl := fmt.Sprintf("%s://%s/qiongxiao/v5/apis/api/refresh", s.Config.Protocol, s.Config.Endpoint)
+		apiUrl := fmt.Sprintf("%s://%s/qiongxiao/v5/apis/auth/api/refresh", s.Config.Protocol, s.Config.Endpoint)
 		reqFn := s.NewRequest(apiUrl, "POST", &req.QxV5ApisApiRefreshReq{
 			AccessKey:    s.Config.AccessKeyId,
 			RefreshToken: s.RefreshToken,
