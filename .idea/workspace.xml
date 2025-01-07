@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 完成V5引擎的自动登录和自动刷新">
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csvw99-cloud-sdk-go.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csvw99-cloud-sdk-go.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/sdk.go" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/sdk.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +21,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.22.3" />
+  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.23.3" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -52,11 +53,14 @@
     "Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1).executor": "Run",
     "Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (2).executor": "Run",
     "Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example.executor": "Run",
+    "Makefile 目标.build.executor": "Run",
+    "Makefile 目标.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "develop",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
@@ -64,6 +68,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "go.vgo",
     "vue.rearranger.settings.migration": "true"
   }
@@ -78,62 +83,31 @@
       <recent name="$PROJECT_DIR$/sdk" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go">
-    <configuration name="go build cloudc.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="csvw99-cloud-sdk-go" />
-      <working_directory value="$PROJECT_DIR$/example" />
-      <kind value="FILE" />
-      <package value="github.com/Technology-99/csvw99-cloud-sdk-go/example" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/example/cloudc.go" />
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="GoApplicationRunConfiguration" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="test" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="test" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
       <method v="2" />
     </configuration>
-    <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="csvw99-cloud-sdk-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/Technology-99/csvw99-cloud-sdk-go" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/easy_example.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="csvw99-cloud-sdk-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="github.com/Technology-99/csvw99-cloud-sdk-go/example" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/example/transactions.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build github.com/Technology-99/csvw99-cloud-sdk-go/example" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="csvw99-cloud-sdk-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="github.com/Technology-99/csvw99-cloud-sdk-go/example" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/example/sms.go" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Go 构建.go build cloudc.go" />
-      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go" />
-      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" />
-      <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go" />
-        <item itemvalue="Go 构建.go build cloudc.go" />
-        <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example (1)" />
-        <item itemvalue="Go 构建.go build github.com/Technology-99/csvw99-cloud-sdk-go/example" />
+        <item itemvalue="Makefile 目标.test" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.14475.38" />
+        <option value="bundled-gosdk-d297c17c1fbd-d82d926f19eb-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-243.22562.186" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-GO-243.22562.186" />
       </set>
     </attachedChunks>
   </component>
@@ -176,9 +150,6 @@
   <component name="VgoProject">
     <environment>
       <map>
-        <entry key="ACCESS_KEY_ID" value="61sryZBrDAfxiBAZ" />
-        <entry key="ACCESS_KEY_SECRET" value="5927824570E95D8C708Ea56779442043E35C47D8" />
-        <entry key="ENDPOINT" value="core.csvw88.com" />
         <entry key="GOPROXY" value="goproxy.cn" />
       </map>
     </environment>
