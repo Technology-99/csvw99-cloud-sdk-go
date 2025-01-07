@@ -9,6 +9,7 @@ import (
 func main() {
 
 	Endpoint := os.Getenv("ENDPOINT")
+	logx.Infof("打印sdk接入点: %s", Endpoint)
 
 	// 本示例从环境变量中获取AccessKey ID和AccessKey Secret。
 	AccessKeyId := os.Getenv("ACCESS_KEY_ID")
