@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da00270d-7048-4934-8db6-36fc8c22cc41" name="更改" comment="feat: 完成V5引擎的自动登录和自动刷新">
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csvw99-cloud-sdk-go.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csvw99-cloud-sdk-go.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +62,12 @@
     "git-widget-placeholder": "develop",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/joker/Documents/Github/tech/csvw99-cloud-sdk-go/pb",
+    "last_opened_file_path": "/Users/howard",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "go.vgo",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.gitlab.GitLabSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -90,7 +88,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Makefile 目标.test">
+    <configuration name="build" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="build" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="test" workingDirectory="" arguments="">
         <envs />
@@ -100,6 +104,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Makefile 目标.test" />
+        <item itemvalue="Makefile 目标.build" />
       </list>
     </recent_temporary>
   </component>
