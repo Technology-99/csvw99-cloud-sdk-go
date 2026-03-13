@@ -144,9 +144,11 @@ type ModelArticle struct {
 	AppName        string                 `protobuf:"bytes,25,opt,name=appName,proto3" json:"appName,omitempty"`
 	Labels         []*ModelLabel          `protobuf:"bytes,26,rep,name=labels,proto3" json:"labels,omitempty"`
 	RecommendSites []*ModelRelatedSites   `protobuf:"bytes,27,rep,name=recommendSites,proto3" json:"recommendSites,omitempty"`
-	ActivityNum    int32                  `protobuf:"varint,28,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
-	Scene          int32                  `protobuf:"varint,29,opt,name=scene,proto3" json:"scene,omitempty"`
-	Tool           int32                  `protobuf:"varint,30,opt,name=tool,proto3" json:"tool,omitempty"`
+	VerticalCover  string                 `protobuf:"bytes,28,opt,name=verticalCover,proto3" json:"verticalCover,omitempty"`
+	SquareCover    string                 `protobuf:"bytes,29,opt,name=squareCover,proto3" json:"squareCover,omitempty"`
+	ActivityNum    int32                  `protobuf:"varint,30,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
+	Scene          int32                  `protobuf:"varint,31,opt,name=scene,proto3" json:"scene,omitempty"`
+	Tool           int32                  `protobuf:"varint,32,opt,name=tool,proto3" json:"tool,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -368,6 +370,20 @@ func (x *ModelArticle) GetRecommendSites() []*ModelRelatedSites {
 		return x.RecommendSites
 	}
 	return nil
+}
+
+func (x *ModelArticle) GetVerticalCover() string {
+	if x != nil {
+		return x.VerticalCover
+	}
+	return ""
+}
+
+func (x *ModelArticle) GetSquareCover() string {
+	if x != nil {
+		return x.SquareCover
+	}
+	return ""
 }
 
 func (x *ModelArticle) GetActivityNum() int32 {
@@ -2794,9 +2810,11 @@ type CreateArticleReq struct {
 	AppName       string                 `protobuf:"bytes,20,opt,name=appName,proto3" json:"appName,omitempty"`
 	LabelIds      []uint32               `protobuf:"varint,21,rep,packed,name=labelIds,proto3" json:"labelIds,omitempty"`
 	RecommendSite string                 `protobuf:"bytes,22,opt,name=recommendSite,proto3" json:"recommendSite,omitempty"`
-	ActivityNum   int32                  `protobuf:"varint,23,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
-	Scene         int32                  `protobuf:"varint,24,opt,name=scene,proto3" json:"scene,omitempty"`
-	Tool          int32                  `protobuf:"varint,25,opt,name=tool,proto3" json:"tool,omitempty"`
+	VerticalCover string                 `protobuf:"bytes,23,opt,name=verticalCover,proto3" json:"verticalCover,omitempty"`
+	SquareCover   string                 `protobuf:"bytes,24,opt,name=squareCover,proto3" json:"squareCover,omitempty"`
+	ActivityNum   int32                  `protobuf:"varint,25,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
+	Scene         int32                  `protobuf:"varint,26,opt,name=scene,proto3" json:"scene,omitempty"`
+	Tool          int32                  `protobuf:"varint,27,opt,name=tool,proto3" json:"tool,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2985,6 +3003,20 @@ func (x *CreateArticleReq) GetRecommendSite() string {
 	return ""
 }
 
+func (x *CreateArticleReq) GetVerticalCover() string {
+	if x != nil {
+		return x.VerticalCover
+	}
+	return ""
+}
+
+func (x *CreateArticleReq) GetSquareCover() string {
+	if x != nil {
+		return x.SquareCover
+	}
+	return ""
+}
+
 func (x *CreateArticleReq) GetActivityNum() int32 {
 	if x != nil {
 		return x.ActivityNum
@@ -3030,9 +3062,11 @@ type UpdateArticleReq struct {
 	GhId          string                 `protobuf:"bytes,20,opt,name=ghId,proto3" json:"ghId,omitempty"`
 	AppName       string                 `protobuf:"bytes,21,opt,name=appName,proto3" json:"appName,omitempty"`
 	RecommendSite string                 `protobuf:"bytes,22,opt,name=recommendSite,proto3" json:"recommendSite,omitempty"`
-	ActivityNum   int32                  `protobuf:"varint,23,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
-	Scene         int32                  `protobuf:"varint,24,opt,name=scene,proto3" json:"scene,omitempty"`
-	Tool          int32                  `protobuf:"varint,25,opt,name=tool,proto3" json:"tool,omitempty"`
+	VerticalCover string                 `protobuf:"bytes,23,opt,name=verticalCover,proto3" json:"verticalCover,omitempty"`
+	SquareCover   string                 `protobuf:"bytes,24,opt,name=squareCover,proto3" json:"squareCover,omitempty"`
+	ActivityNum   int32                  `protobuf:"varint,25,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
+	Scene         int32                  `protobuf:"varint,26,opt,name=scene,proto3" json:"scene,omitempty"`
+	Tool          int32                  `protobuf:"varint,27,opt,name=tool,proto3" json:"tool,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3217,6 +3251,20 @@ func (x *UpdateArticleReq) GetAppName() string {
 func (x *UpdateArticleReq) GetRecommendSite() string {
 	if x != nil {
 		return x.RecommendSite
+	}
+	return ""
+}
+
+func (x *UpdateArticleReq) GetVerticalCover() string {
+	if x != nil {
+		return x.VerticalCover
+	}
+	return ""
+}
+
+func (x *UpdateArticleReq) GetSquareCover() string {
+	if x != nil {
+		return x.SquareCover
 	}
 	return ""
 }
@@ -5197,7 +5245,7 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\x04name\x18\x04 \x01(\tR\x04name\x12\x16\n" +
 	"\x06status\x18\x05 \x01(\x03R\x06status\x12\x12\n" +
 	"\x04sort\x18\x06 \x01(\x03R\x04sort\x12\x14\n" +
-	"\x05level\x18\a \x01(\x03R\x05level\"\xab\x06\n" +
+	"\x05level\x18\a \x01(\x03R\x05level\"\xf3\x06\n" +
 	"\fModelArticle\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x1c\n" +
 	"\tcreatedAt\x18\x02 \x01(\x03R\tcreatedAt\x12\x1c\n" +
@@ -5226,10 +5274,12 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\x04ghId\x18\x18 \x01(\tR\x04ghId\x12\x18\n" +
 	"\aappName\x18\x19 \x01(\tR\aappName\x12&\n" +
 	"\x06labels\x18\x1a \x03(\v2\x0e.h5.ModelLabelR\x06labels\x12=\n" +
-	"\x0erecommendSites\x18\x1b \x03(\v2\x15.h5.ModelRelatedSitesR\x0erecommendSites\x12 \n" +
-	"\vactivityNum\x18\x1c \x01(\x05R\vactivityNum\x12\x14\n" +
-	"\x05scene\x18\x1d \x01(\x05R\x05scene\x12\x12\n" +
-	"\x04tool\x18\x1e \x01(\x05R\x04tool\"\x9b\x05\n" +
+	"\x0erecommendSites\x18\x1b \x03(\v2\x15.h5.ModelRelatedSitesR\x0erecommendSites\x12$\n" +
+	"\rverticalCover\x18\x1c \x01(\tR\rverticalCover\x12 \n" +
+	"\vsquareCover\x18\x1d \x01(\tR\vsquareCover\x12 \n" +
+	"\vactivityNum\x18\x1e \x01(\x05R\vactivityNum\x12\x14\n" +
+	"\x05scene\x18\x1f \x01(\x05R\x05scene\x12\x12\n" +
+	"\x04tool\x18  \x01(\x05R\x04tool\"\x9b\x05\n" +
 	"\tModelUser\x12\x1a\n" +
 	"\buniqueId\x18\x01 \x01(\tR\buniqueId\x12\x16\n" +
 	"\x06mobile\x18\x02 \x01(\tR\x06mobile\x12\x14\n" +
@@ -5456,7 +5506,7 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\x03msg\x18\x02 \x01(\tR\x03msg\x12\x1c\n" +
 	"\trequestID\x18\x03 \x01(\tR\trequestID\x12\x12\n" +
 	"\x04path\x18\x04 \x01(\tR\x04path\x12!\n" +
-	"\x04data\x18\x05 \x01(\v2\r.h5.ModelUserR\x04data\"\x84\x05\n" +
+	"\x04data\x18\x05 \x01(\v2\r.h5.ModelUserR\x04data\"\xcc\x05\n" +
 	"\x10CreateArticleReq\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1a\n" +
 	"\bsubtitle\x18\x02 \x01(\tR\bsubtitle\x12\x1c\n" +
@@ -5480,10 +5530,12 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\x04ghId\x18\x13 \x01(\tR\x04ghId\x12\x18\n" +
 	"\aappName\x18\x14 \x01(\tR\aappName\x12\x1a\n" +
 	"\blabelIds\x18\x15 \x03(\rR\blabelIds\x12$\n" +
-	"\rrecommendSite\x18\x16 \x01(\tR\rrecommendSite\x12 \n" +
-	"\vactivityNum\x18\x17 \x01(\x05R\vactivityNum\x12\x14\n" +
-	"\x05scene\x18\x18 \x01(\x05R\x05scene\x12\x12\n" +
-	"\x04tool\x18\x19 \x01(\x05R\x04tool\"\xf8\x04\n" +
+	"\rrecommendSite\x18\x16 \x01(\tR\rrecommendSite\x12$\n" +
+	"\rverticalCover\x18\x17 \x01(\tR\rverticalCover\x12 \n" +
+	"\vsquareCover\x18\x18 \x01(\tR\vsquareCover\x12 \n" +
+	"\vactivityNum\x18\x19 \x01(\x05R\vactivityNum\x12\x14\n" +
+	"\x05scene\x18\x1a \x01(\x05R\x05scene\x12\x12\n" +
+	"\x04tool\x18\x1b \x01(\x05R\x04tool\"\xc0\x05\n" +
 	"\x10UpdateArticleReq\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1a\n" +
@@ -5507,10 +5559,12 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\aappPath\x18\x13 \x01(\tR\aappPath\x12\x12\n" +
 	"\x04ghId\x18\x14 \x01(\tR\x04ghId\x12\x18\n" +
 	"\aappName\x18\x15 \x01(\tR\aappName\x12$\n" +
-	"\rrecommendSite\x18\x16 \x01(\tR\rrecommendSite\x12 \n" +
-	"\vactivityNum\x18\x17 \x01(\x05R\vactivityNum\x12\x14\n" +
-	"\x05scene\x18\x18 \x01(\x05R\x05scene\x12\x12\n" +
-	"\x04tool\x18\x19 \x01(\x05R\x04tool\"\x91\x01\n" +
+	"\rrecommendSite\x18\x16 \x01(\tR\rrecommendSite\x12$\n" +
+	"\rverticalCover\x18\x17 \x01(\tR\rverticalCover\x12 \n" +
+	"\vsquareCover\x18\x18 \x01(\tR\vsquareCover\x12 \n" +
+	"\vactivityNum\x18\x19 \x01(\x05R\vactivityNum\x12\x14\n" +
+	"\x05scene\x18\x1a \x01(\x05R\x05scene\x12\x12\n" +
+	"\x04tool\x18\x1b \x01(\x05R\x04tool\"\x91\x01\n" +
 	"\x11CreateArticleResp\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x10\n" +
 	"\x03msg\x18\x02 \x01(\tR\x03msg\x12\x1c\n" +
