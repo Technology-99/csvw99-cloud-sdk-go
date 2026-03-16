@@ -149,6 +149,7 @@ type ModelArticle struct {
 	ActivityNum    int32                  `protobuf:"varint,30,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
 	Scene          int32                  `protobuf:"varint,31,opt,name=scene,proto3" json:"scene,omitempty"`
 	Tool           int32                  `protobuf:"varint,32,opt,name=tool,proto3" json:"tool,omitempty"`
+	AbilityType    int32                  `protobuf:"varint,33,opt,name=abilityType,proto3" json:"abilityType,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -403,6 +404,13 @@ func (x *ModelArticle) GetScene() int32 {
 func (x *ModelArticle) GetTool() int32 {
 	if x != nil {
 		return x.Tool
+	}
+	return 0
+}
+
+func (x *ModelArticle) GetAbilityType() int32 {
+	if x != nil {
+		return x.AbilityType
 	}
 	return 0
 }
@@ -2815,6 +2823,7 @@ type CreateArticleReq struct {
 	ActivityNum   int32                  `protobuf:"varint,25,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
 	Scene         int32                  `protobuf:"varint,26,opt,name=scene,proto3" json:"scene,omitempty"`
 	Tool          int32                  `protobuf:"varint,27,opt,name=tool,proto3" json:"tool,omitempty"`
+	AbilityType   int32                  `protobuf:"varint,28,opt,name=abilityType,proto3" json:"abilityType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3038,6 +3047,13 @@ func (x *CreateArticleReq) GetTool() int32 {
 	return 0
 }
 
+func (x *CreateArticleReq) GetAbilityType() int32 {
+	if x != nil {
+		return x.AbilityType
+	}
+	return 0
+}
+
 type UpdateArticleReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -3067,6 +3083,7 @@ type UpdateArticleReq struct {
 	ActivityNum   int32                  `protobuf:"varint,25,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
 	Scene         int32                  `protobuf:"varint,26,opt,name=scene,proto3" json:"scene,omitempty"`
 	Tool          int32                  `protobuf:"varint,27,opt,name=tool,proto3" json:"tool,omitempty"`
+	AbilityType   int32                  `protobuf:"varint,28,opt,name=abilityType,proto3" json:"abilityType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3290,6 +3307,13 @@ func (x *UpdateArticleReq) GetTool() int32 {
 	return 0
 }
 
+func (x *UpdateArticleReq) GetAbilityType() int32 {
+	if x != nil {
+		return x.AbilityType
+	}
+	return 0
+}
+
 type CreateArticleResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Code          int32                  `protobuf:"varint,1,opt,name=code,proto3" json:"code,omitempty"`
@@ -3383,6 +3407,7 @@ type QueryArticleListReq struct {
 	ActivityNum   int32                  `protobuf:"varint,13,opt,name=activityNum,proto3" json:"activityNum,omitempty"`
 	Scene         int32                  `protobuf:"varint,14,opt,name=scene,proto3" json:"scene,omitempty"`
 	Tool          int32                  `protobuf:"varint,15,opt,name=tool,proto3" json:"tool,omitempty"`
+	AbilityType   int32                  `protobuf:"varint,16,opt,name=abilityType,proto3" json:"abilityType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3518,6 +3543,13 @@ func (x *QueryArticleListReq) GetScene() int32 {
 func (x *QueryArticleListReq) GetTool() int32 {
 	if x != nil {
 		return x.Tool
+	}
+	return 0
+}
+
+func (x *QueryArticleListReq) GetAbilityType() int32 {
+	if x != nil {
+		return x.AbilityType
 	}
 	return 0
 }
@@ -5245,7 +5277,7 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\x04name\x18\x04 \x01(\tR\x04name\x12\x16\n" +
 	"\x06status\x18\x05 \x01(\x03R\x06status\x12\x12\n" +
 	"\x04sort\x18\x06 \x01(\x03R\x04sort\x12\x14\n" +
-	"\x05level\x18\a \x01(\x03R\x05level\"\xf3\x06\n" +
+	"\x05level\x18\a \x01(\x03R\x05level\"\x95\a\n" +
 	"\fModelArticle\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x1c\n" +
 	"\tcreatedAt\x18\x02 \x01(\x03R\tcreatedAt\x12\x1c\n" +
@@ -5279,7 +5311,8 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\vsquareCover\x18\x1d \x01(\tR\vsquareCover\x12 \n" +
 	"\vactivityNum\x18\x1e \x01(\x05R\vactivityNum\x12\x14\n" +
 	"\x05scene\x18\x1f \x01(\x05R\x05scene\x12\x12\n" +
-	"\x04tool\x18  \x01(\x05R\x04tool\"\x9b\x05\n" +
+	"\x04tool\x18  \x01(\x05R\x04tool\x12 \n" +
+	"\vabilityType\x18! \x01(\x05R\vabilityType\"\x9b\x05\n" +
 	"\tModelUser\x12\x1a\n" +
 	"\buniqueId\x18\x01 \x01(\tR\buniqueId\x12\x16\n" +
 	"\x06mobile\x18\x02 \x01(\tR\x06mobile\x12\x14\n" +
@@ -5506,7 +5539,7 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\x03msg\x18\x02 \x01(\tR\x03msg\x12\x1c\n" +
 	"\trequestID\x18\x03 \x01(\tR\trequestID\x12\x12\n" +
 	"\x04path\x18\x04 \x01(\tR\x04path\x12!\n" +
-	"\x04data\x18\x05 \x01(\v2\r.h5.ModelUserR\x04data\"\xcc\x05\n" +
+	"\x04data\x18\x05 \x01(\v2\r.h5.ModelUserR\x04data\"\xee\x05\n" +
 	"\x10CreateArticleReq\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1a\n" +
 	"\bsubtitle\x18\x02 \x01(\tR\bsubtitle\x12\x1c\n" +
@@ -5535,7 +5568,8 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\vsquareCover\x18\x18 \x01(\tR\vsquareCover\x12 \n" +
 	"\vactivityNum\x18\x19 \x01(\x05R\vactivityNum\x12\x14\n" +
 	"\x05scene\x18\x1a \x01(\x05R\x05scene\x12\x12\n" +
-	"\x04tool\x18\x1b \x01(\x05R\x04tool\"\xc0\x05\n" +
+	"\x04tool\x18\x1b \x01(\x05R\x04tool\x12 \n" +
+	"\vabilityType\x18\x1c \x01(\x05R\vabilityType\"\xe2\x05\n" +
 	"\x10UpdateArticleReq\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1a\n" +
@@ -5564,13 +5598,14 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\vsquareCover\x18\x18 \x01(\tR\vsquareCover\x12 \n" +
 	"\vactivityNum\x18\x19 \x01(\x05R\vactivityNum\x12\x14\n" +
 	"\x05scene\x18\x1a \x01(\x05R\x05scene\x12\x12\n" +
-	"\x04tool\x18\x1b \x01(\x05R\x04tool\"\x91\x01\n" +
+	"\x04tool\x18\x1b \x01(\x05R\x04tool\x12 \n" +
+	"\vabilityType\x18\x1c \x01(\x05R\vabilityType\"\x91\x01\n" +
 	"\x11CreateArticleResp\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x10\n" +
 	"\x03msg\x18\x02 \x01(\tR\x03msg\x12\x1c\n" +
 	"\trequestID\x18\x03 \x01(\tR\trequestID\x12\x12\n" +
 	"\x04path\x18\x04 \x01(\tR\x04path\x12$\n" +
-	"\x04data\x18\x05 \x01(\v2\x10.h5.ModelArticleR\x04data\"\x8b\x03\n" +
+	"\x04data\x18\x05 \x01(\v2\x10.h5.ModelArticleR\x04data\"\xad\x03\n" +
 	"\x13QueryArticleListReq\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x1a\n" +
 	"\bpageSize\x18\x02 \x01(\x05R\bpageSize\x12\x1c\n" +
@@ -5587,7 +5622,8 @@ const file_h5_rpc_service_h5_rpc_service_proto_rawDesc = "" +
 	"\aorderBy\x18\f \x01(\tR\aorderBy\x12 \n" +
 	"\vactivityNum\x18\r \x01(\x05R\vactivityNum\x12\x14\n" +
 	"\x05scene\x18\x0e \x01(\x05R\x05scene\x12\x12\n" +
-	"\x04tool\x18\x0f \x01(\x05R\x04tool\"\xa0\x01\n" +
+	"\x04tool\x18\x0f \x01(\x05R\x04tool\x12 \n" +
+	"\vabilityType\x18\x10 \x01(\x05R\vabilityType\"\xa0\x01\n" +
 	"\x14QueryArticleListResp\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\x05R\x04code\x12\x10\n" +
 	"\x03msg\x18\x02 \x01(\tR\x03msg\x12\x1c\n" +
